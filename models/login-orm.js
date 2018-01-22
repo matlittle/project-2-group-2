@@ -9,7 +9,7 @@ const conn = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : 'oblivion',
-  database : 'my_db'
+  database : 'baggage_db'
 });
 
 
