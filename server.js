@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Add OAuth server.
 var oauthServer = require('express-oauth-server');
-app.oauth = oauthServer({
+app.oauth = new oauthServer({
   model: require('./models/login-orm')
 });
 
