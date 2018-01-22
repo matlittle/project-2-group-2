@@ -28,10 +28,19 @@ app.get('/oauth/authorize', function(req, res) {
     return res.redirect(`/login?redirect=${req.path}&client_id=${req.query.client_id}&redirect_uri=${req.query.redirect_uri}`);
   }
 
-  return render('authorize', {
+  /* Test response */
+  res.json({
     client_id: req.query.client_id,
-    redirect_uri: req.query.redirect_uri
+    redirect_uri: req.query.redirect_uri,
+    from: '/oauth/authorize'
   });
+
+  /* OLD
+    return render('authorize', {
+      client_id: req.query.client_id,
+      redirect_uri: req.query.redirect_uri
+    });
+   */
 });
 
 // Post authorization.
@@ -46,22 +55,43 @@ app.post('/oauth/authorize', function(req, res) {
 
 // Get login.
 app.get('/login', function(req) {
-  return render('login', {
+
+  res.json({
     redirect: req.query.redirect,
     client_id: req.query.client_id,
-    redirect_uri: req.query.redirect_uri
+    redirect_uri: req.query.redirect_uri,
+    from: '/login'
   });
+
+
+  /* OLD
+    return render('login', {
+      redirect: req.query.redirect,
+      client_id: req.query.client_id,
+      redirect_uri: req.query.redirect_uri
+    });
+   */
 });
 
 // Post login.
 app.post('/login', function(req, res) {
   // @TODO: Insert your own login mechanism.
   if (req.body.email !== 'thom@nightworld.com') {
-    return render('login', {
+
+    res.json({
       redirect: req.body.redirect,
       client_id: req.body.client_id,
-      redirect_uri: req.body.redirect_uri
-    });
+      redirect_uri: req.body.redirect_uri,
+      from: '/login'
+    })
+
+    /* OLD
+      return render('login', {
+        redirect: req.body.redirect,
+        client_id: req.body.client_id,
+        redirect_uri: req.body.redirect_uri
+      });
+     */
   }
 
   // Successful logins should send the user back to /oauth/authorize.
