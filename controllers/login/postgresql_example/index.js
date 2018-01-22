@@ -1,13 +1,10 @@
 
-/**
- * Module dependencies.
- */
-
+/* Dependencies */
 var bodyParser = require('body-parser');
 var express = require('express');
 var oauthServer = require('express-oauth-server');
-var render = require('co-views')('views');
-var util = require('util');
+//var render = require('co-views')('views');
+//var util = require('util');
 
 // Create an Express application.
 var app = express();
@@ -28,7 +25,7 @@ app.post('/oauth/token', app.oauth.token());
 app.get('/oauth/authorize', function(req, res) {
   // Redirect anonymous users to login page.
   if (!req.app.locals.user) {
-    return res.redirect(util.format('/login?redirect=%s&client_id=%s&redirect_uri=%s', req.path, req.query.client_id, req.query.redirect_uri));
+    return res.redirect(`/login?redirect=${req.path}&client_id=${req.query.client_id}&redirect_uri=${req.query.redirect_uri}`);
   }
 
   return render('authorize', {
@@ -41,7 +38,7 @@ app.get('/oauth/authorize', function(req, res) {
 app.post('/oauth/authorize', function(req, res) {
   // Redirect anonymous users to login page.
   if (!req.app.locals.user) {
-    return res.redirect(util.format('/login?client_id=%s&redirect_uri=%s', req.query.client_id, req.query.redirect_uri));
+    return res.redirect(`/login?client_id=${req.query.client_id}&redirect_uri=${req.query.redirect_uri}`);
   }
 
   return app.oauth.authorize();
@@ -70,7 +67,7 @@ app.post('/login', function(req, res) {
   // Successful logins should send the user back to /oauth/authorize.
   var path = req.body.redirect || '/home';
 
-  return res.redirect(util.format('/%s?client_id=%s&redirect_uri=%s', path, req.query.client_id, req.query.redirect_uri));
+  return res.redirect(`/${path}?client_id=${req.query.client_id}&redirect_uri=${req.query.redirect_uri}`);
 });
 
 // Get secret.
@@ -85,4 +82,6 @@ app.get('/public', function(req, res) {
 });
 
 // Start listening for requests.
-app.listen(3000);
+app.listen(3000, () => {
+  console.log(`App listening at http://localhost:3000`);
+});
