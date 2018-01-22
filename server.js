@@ -11,8 +11,10 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const session      = require('express-session');
 
+/* TEMP FOR LOGIN TESTS */
+app.set('view engine', 'ejs');
 
-// require('./config/passport')(passport); // pass passport for configuration
+require('./config/passport')(passport); // pass passport for configuration
 
 // set up our express application
 app.use(cookieParser()); // read cookies (needed for auth)
