@@ -13,9 +13,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Add OAuth server.
 var oauthServer = require('express-oauth-server');
 app.oauth = oauthServer({
-  model: require('./models/login-orm');
+  model: require('./models/login-orm')
 });
 
+// Add login routes to express server
+require('./controllers/login-routes')(app);
 
 /* Examples for routes that will require authentication, vs public routes */
 // Get secret.
