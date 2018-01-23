@@ -23,7 +23,6 @@ module.exports = function (app, passport) {
   // SIGNUP ==============================
   // show the signup form
   app.get('/signup', function (req, res) {
-
     // render the page and pass in any flash data if it exists
     res.render('signup.ejs', { message: req.flash('signupMessage') });
   });
@@ -35,12 +34,16 @@ module.exports = function (app, passport) {
 		failureFlash : true // allow flash messages
 	}));
 
+
   // PROFILE SECTION =====================
   // we will want this protected so you have to be logged in to visit
   // we will use route middleware to verify this (the isLoggedIn function)
   app.get('/profile', isLoggedIn, function (req, res) {
+    console.log('./controllers/login-routes.js - GET /profile ===============');
+    console.log('req.user: ', req.user);
+
     res.render('profile.ejs', {
-      user: req.user // get the user out of session and pass to template
+      user: req.user[0] // get the user out of session and pass to template
     });
   });
 
