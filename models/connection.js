@@ -9,7 +9,7 @@ if (process.env.JAWSDB_URL) {
     module.exports = mysql.createConnection({
         host     : 'localhost',
         user     : 'root',
-        password : 'oblivion',
+        password : null,
         database : 'baggage_db'
     });
 }
