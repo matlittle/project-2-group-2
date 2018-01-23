@@ -1,13 +1,13 @@
 USE baggage_db;
 
 INSERT INTO questions (question,spec1,spec1_wgt,spec2,spec2_wgt,spec3,spec3_wgt) VALUES
-	("Question #1 Goes here!",1,90,2,75,3,70),
-	("Question #2 Goes here!",2,85,3,80,4,65),
-	("Question #3 Goes here!",3,85,4,80,5,75),
-	("Question #4 Goes here!",4,95,5,90,1,85),
-	("Question #5 Goes here!",5,85,1,70,2,65),
-	("Question #6 Goes here!",1,90,2,80,3,70),
-	("Question #7 Goes here!",2,85,3,80,4,60),
+	("Do you frequently find yourself unable to relax?",1,100,2,75,3,70),
+	("Are you always expecting the worst?",2,85,3,80,4,65),
+	("Do you have problems remembering appointments or obligations?",3,85,4,80,5,75),
+	("Are you frequently terrified or afraid?",4,95,5,90,1,85),
+	("Are you frequently nervous?",5,85,1,70,2,65),
+	("Do you frequently find yourself fidgeting with your hands or feet?",1,90,2,80,3,70),
+	("Do you frequently feel guilty or self-blame?",2,85,3,80,4,60),
 	("Question #8 Goes here!",3,95,4,75,5,55),
 	("Question #9 Goes here!",4,75,5,65,1,50),
 	("Question #10 Goes here!",5,70,1,65,2,45),
@@ -30,9 +30,9 @@ INSERT INTO questions (question,spec1,spec1_wgt,spec2,spec2_wgt,spec3,spec3_wgt)
 
 
 INSERT INTO specialties (spec_name) VALUES
-	("Mental Health Specialty #1"),
-	("Mental Health Specialty #2"),
-	("Mental Health Specialty #3"),
-	("Mental Health Specialty #4"),
-	("Mental Health Specialty #5")
+	("Anxiety & Depression"),
+	("ADHD"),
+	("ASD"),
+	("PTSD"),
+	("Specialty #5")
 ;
