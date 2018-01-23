@@ -8,6 +8,6 @@ if (process.env.JAWSDB_URL) {
         host     : 'localhost',
         user     : 'root',
         password : 'oblivion',
-        database : 'burgers_db'
+        database : 'baggage_db'
     });
 }

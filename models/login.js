@@ -1,5 +1,4 @@
 const conn = require('./connection');
-const bcrypt = require('../config/bcrypt');
 
 module.exports = {
   findUserById: function (id) {
@@ -7,12 +6,15 @@ module.exports = {
 
     return new Promise( (resolve, reject) => {
       conn.query(query, id, (err, res) => {
-        resolve(err, res);
+        if (err) reject(err);
+
+        resolve(res);
       });
     });
   },
   
-  checkIfNameUsed: function (username) {
+  //checkIfNameUsed: function (username) {
+  findUserByName: function (username) {
     const query = `SELECT * FROM users WHERE username = ?`;
 
     return new Promise( (resolve, reject) => {
@@ -27,10 +29,12 @@ module.exports = {
   createNewUser: function (username, password) {
     const query = `INSERT INTO users (username, password) VALUES(?, ?)`;
 
-    const hashword = bcrypt.generateHash(password);
+    return new Promise( (resolve, reject) => {
+      conn.query(query, [username, hashword], (err, res) => {
+        if (err) reject(err);
 
-    conn.query(query, [username, hashword], (err, res) => {
-
+        resolve(res);
+      });
     });
   }
 
