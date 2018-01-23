@@ -21,4 +21,12 @@ CREATE TABLE specialties (
   spec_name VARCHAR(100),
   spec_active BOOLEAN DEFAULT TRUE,
   PRIMARY KEY (spec_id)
-)
+);
+
+CREATE TABLE users (
+    id INT NOT NULL AUTO_INCREMENT,
+    username VARCHAR(254) NOT NULL,
+    password VARCHAR(254) NOT NULL,
+    PRIMARY KEY (id)
+);
+

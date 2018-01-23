@@ -5,6 +5,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const loginModel = require('../models/login');
 const bcrypt = require('../config/bcrypt');
 
+console.log('./config/passport.js loaded ================================')
 // expose this function to our app using module.exports
 module.exports = function (passport) {
 
@@ -16,12 +17,13 @@ module.exports = function (passport) {
 
   // used to serialize the user for the session
   passport.serializeUser(function (user, done) {
+    console.log('./config/passport.js serializeUser =========================')
     done(null, user.id);
   });
 
   // used to deserialize the user
   passport.deserializeUser(function (id, done) {
-
+    console.log('./config/passport.js deserializeUser =======================')
     loginModel.findUserById(id).then(function (user) {
       done(null, user);
     });
@@ -44,8 +46,10 @@ module.exports = function (passport) {
     }, 
     function (req, username, password, done) {
 
+      console.log('./config/passport.js local-signup =======================')
+
       loginModel.findUserByName(username).then( function (res) {
-        if (user) {
+        if (res.length > 0) {
           return done(null, false, req.flash('signupMessage', 'That email is already taken.') );
         }
 
@@ -104,9 +108,6 @@ module.exports = function (passport) {
     })
   );
 
-
-
-
   // =========================================================================
   // LOCAL LOGIN =============================================================
   // =========================================================================
@@ -119,14 +120,21 @@ module.exports = function (passport) {
     },
     function (req, username, password, done) { // callback with email and password from our form
 
+      console.log('./config/passport.js - local-login =======================')
+
       loginModel.findUserByName(username).then( function (res) {
+
+        console.log('./config/passport.js - loginModel.findUserByName ===========')
+
         // if no user is found, return the message
-        if(!res) { 
+        if (res.length < 1) { 
           return done(null, false, req.flash('loginMessage', 'No user found.'));
         }
 
+        const hashword = bcrypt.generateHash(password);
+
         // if the user is found but the password is wrong
-        if (!bcrypt.validatePassword(hashword, user)) {
+        if (!bcrypt.validatePassword(hashword, res.password)) {
           return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.'));
         }
 
@@ -136,8 +144,6 @@ module.exports = function (passport) {
       }).catch( function (err) {
         return done(err);
       });
-
-
 
     /*OLD  
       // find a user whose email is the same as the forms email

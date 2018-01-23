@@ -1,7 +1,10 @@
 const conn = require('./connection');
 
+console.log(`./models/login.js - loaded =================================`);
+
 module.exports = {
   findUserById: function (id) {
+    console.log(`./models/login.js - findUserByID ===========================`);
     const query = `SELECT * FROM users WHERE id = ?`;
 
     return new Promise( (resolve, reject) => {
@@ -15,11 +18,15 @@ module.exports = {
   
   //checkIfNameUsed: function (username) {
   findUserByName: function (username) {
+    console.log(`./models/login.js - findUserByName =========================`);
+    console.log(`username: ${username}`)
     const query = `SELECT * FROM users WHERE username = ?`;
 
-    return new Promise( (resolve, reject) => {
-      conn.query(query, id, (err, res) => {
+    return new Promise( function (resolve, reject) {
+      conn.query(query, username, function (err, res) {
         if (err) reject(err);
+
+        console.log(`res: ${res}`);
 
         resolve(res);
       });
@@ -27,10 +34,11 @@ module.exports = {
   },
 
   createNewUser: function (username, password) {
+    console.log(`./models/login.js - createNewUser ==========================`);
     const query = `INSERT INTO users (username, password) VALUES(?, ?)`;
 
     return new Promise( (resolve, reject) => {
-      conn.query(query, [username, hashword], (err, res) => {
+      conn.query(query, [username, password], (err, res) => {
         if (err) reject(err);
 
         resolve(res);
