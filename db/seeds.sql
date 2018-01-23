@@ -36,3 +36,4 @@ INSERT INTO specialties (spec_name) VALUES
 	("PTSD"),
 	("Specialty #5")
 ;
+
