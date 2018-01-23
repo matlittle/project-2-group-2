@@ -36,6 +36,8 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 // routes ======================================================================
 // attach login routes to express server
 require('./controllers/login-routes.js')(app, passport); 
+// attach html routes that server pages
+require('./controllers/login-routes.js')(app); 
 
 // launch ======================================================================
 app.listen(port, () => {
