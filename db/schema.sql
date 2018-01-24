@@ -7,19 +7,14 @@ USE baggage_db;
 CREATE TABLE questions (
   id INT AUTO_INCREMENT,
   question VARCHAR(200) NOT NULL,
-  spec1 INT(2),
-  spec1_wgt INT(3),
-  spec2 INT(2),
-  spec2_wgt INT(3),
-  spec3 INT(2),
-  spec3_wgt INT(3),
+  field INT(1),
+  threshold INT(2),
   PRIMARY KEY(id)
 );
 
 CREATE TABLE specialties (
   spec_id INT AUTO_INCREMENT,
-  spec_name VARCHAR(100),
-  spec_active BOOLEAN DEFAULT TRUE,
+  spec_name VARCHAR(50),
   PRIMARY KEY (spec_id)
 );
 
