@@ -24,12 +24,12 @@ INSERT INTO questions (field,threshold,question) VALUES
   (2,40,'Even when reading a book that would usually interest you, do you find yourself reading the same paragraph over and over, and then lose interest after a couple of pages?'),
   (2,50,'Has your productivity declined so much lately that you feel you will get in trouble, or be fired by your boss any day?'),
 
-  (3,20,''),
-  (3,20,''),
-  (3,30,''),
-  (3,30,''),
-  (3,40,''),
-  (3,50,''),
+  (3,20,'Do you often have a hard time wrapping up the final details of a project, once the interesting parts have been done?'),
+  (3,20,'Do you often avoid or delay getting started when you are faced with a task that requires a lot of thought and/or organization at the outset?'),
+  (3,30,'Are you often distracted by activity or noise around you? When people are talking to you, do you often drift off or tune out?'),
+  (3,30,'Do you often make careless mistakes when you have to work on a boring or difficult project?'),
+  (3,40,'Do you often have difficulty keeping your attention when you are doing boring or repetitive work?'),
+  (3,50,'Do you often make decisions and act on them impulsively — like spending money, diving into new activities, changing plans?'),
 
   (4,20,'During the traumatic event did you feel intense fear, helplessness, and/or horror?'),  
   (4,20,'During the traumatic event, did you experience or witness serious injury or death, or the threat of injury or death?'),
