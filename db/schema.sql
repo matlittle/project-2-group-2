@@ -6,7 +6,7 @@ USE baggage_db;
 
 CREATE TABLE questions (
   id INT AUTO_INCREMENT,
-  question VARCHAR(200) NOT NULL,
+  question VARCHAR(300) NOT NULL,
   field INT(1),
   threshold INT(2),
   PRIMARY KEY(id)
@@ -20,7 +20,7 @@ CREATE TABLE specialties (
 
 CREATE TABLE users (
     id INT NOT NULL AUTO_INCREMENT,
-    username VARCHAR(254) NOT NULL,
+    email VARCHAR(254) NOT NULL,
     password VARCHAR(254) NOT NULL,
     PRIMARY KEY (id)
 );
