@@ -18,13 +18,13 @@ module.exports = {
   },
   
   //checkIfNameUsed: function (username) {
-  findUserByName: function (username) {
+  findUserByName: function (email) {
     console.log(`./models/login.js - findUserByName =========================`);
-    console.log('username: ', username);
-    const query = `SELECT * FROM users WHERE username = ?`;
+    console.log('email: ', email);
+    const query = `SELECT * FROM users WHERE email = ?`;
 
     return new Promise( function (resolve, reject) {
-      conn.query(query, username, function (err, res) {
+      conn.query(query, email, function (err, res) {
         if (err) reject(err);
 
         console.log(`res: `, res);
@@ -34,15 +34,15 @@ module.exports = {
     });
   },
 
-  createNewUser: function (username, password) {
+  createNewUser: function (email, password) {
     console.log(`./models/login.js - createNewUser ==========================`);
-    console.log('username: ', username);
+    console.log('email: ', email);
     console.log('password: ', password);
     
-    const query = `INSERT INTO users (username, password) VALUES(?, ?)`;
+    const query = `INSERT INTO users (email, password) VALUES(?, ?)`;
 
     return new Promise( (resolve, reject) => {
-      conn.query(query, [username, password], (err, res) => {
+      conn.query(query, [email, password], (err, res) => {
         if (err) reject(err);
 
         resolve(res);
