@@ -21,6 +21,8 @@ require('./config/passport')(passport); // pass passport for configuration
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use(express.static("./public"));
+
 
 // required for passport
 app.use(session({ 
