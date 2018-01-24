@@ -39,20 +39,22 @@ module.exports = function (passport) {
 
   // LOCAL SIGNUP ============================================================
   passport.use('local-signup', new LocalStrategy({
+      usernameField: 'email',
+      passwordField: 'password',
       passReqToCallback: true // allows us to pass back the entire request to the callback
     }, 
-    function (req, username, password, done) {
+    function (req, email, password, done) {
 
       console.log('./config/passport.js local-signup =======================');
 
-      loginModel.findUserByName(username).then( function (res) {
+      loginModel.findUserByName(email).then( function (res) {
         if (res.length > 0) {
           return done(null, false, req.flash('signupMessage', 'That email is already taken.') );
         }
 
         const hashword = bcrypt.generateHash(password);
 
-        loginModel.createNewUser(username, hashword).then( function (res) {
+        loginModel.createNewUser(email, hashword).then( function (res) {
           console.log(`./config/passport.js - loginModel.createNewuser ==============`);
           console.log('res: ', res);
 
@@ -76,15 +78,17 @@ module.exports = function (passport) {
 
   // LOCAL LOGIN =============================================================
   passport.use('local-login', new LocalStrategy({
+      usernameField: 'email',
+      passwordField: 'password',
       passReqToCallback: true // enable passing back the entire request to the callback
     },
-    function (req, username, password, done) { // callback with username and password from our form
+    function (req, email, password, done) { // callback with email and password from our form
 
       console.log('./config/passport.js - local-login =========================');
-      console.log(`username: ${username}`);
+      console.log(`email: ${email}`);
       console.log(`password: ${password}`);
 
-      loginModel.findUserByName(username).then( function (res) {
+      loginModel.findUserByName(email).then( function (res) {
 
         console.log('./config/passport.js - loginModel.findUserByName ===========');
         console.log('res: ', res);

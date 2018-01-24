@@ -25,7 +25,7 @@ CREATE TABLE specialties (
 
 CREATE TABLE users (
     id INT NOT NULL AUTO_INCREMENT,
-    username VARCHAR(254) NOT NULL,
+    email VARCHAR(254) NOT NULL,
     password VARCHAR(254) NOT NULL,
     PRIMARY KEY (id)
 );
