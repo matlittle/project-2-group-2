@@ -52,8 +52,7 @@
             lng: position.coords.longitude
           };
           console.log(pos);
-          let date1 = new Date();
-          let betterDoctor = `https://api.betterdoctor.com/${date1}/doctors?query=${fieldWeWillGetFromQuestions}&location=${pos.lat}%2C${pos.lng}%2C%2050&sort=distance-asc&skip=0&limit=10&user_key=f66d8b491789282ebde86658f5bf614f`;
+          let betterDoctor = `https://api.betterdoctor.com/2016-03-01/doctors?query=${fieldWeWillGetFromQuestions}&location=${pos.lat}%2C${pos.lng}%2C%2050&sort=distance-asc&skip=0&limit=10&user_key=f66d8b491789282ebde86658f5bf614f`;
 
 
           $.ajax({
