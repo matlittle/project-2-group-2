@@ -2,6 +2,7 @@
 const bcrypt = require('bcrypt-nodejs');
 
 console.log('./config/bcrypt.js - loaded ================================')
+
 module.exports = {
   generateHash: function (password) {
     console.log('./config/bcrypt - generateHash =============================');
