@@ -7,8 +7,10 @@ const nightmare = Nightmare( {show: true} );
 
 /* Our Files */
 const bcrypt = require('../config/bcrypt');
+const mysql = require('../models/connection');
 
 
+console.log(mysql.config.database);
 
 describe("Base Test", () => {
 
@@ -37,6 +39,14 @@ describe('Bcrypt', () => {
       ).to.be.false;
   });
 
+});
+
+
+describe('MySQL Connection', () => {
+
+  it("Should have correct database name", () => {
+    expect(mysql.config.database).to.equal('baggage_db');
+  });
 
 });
 
