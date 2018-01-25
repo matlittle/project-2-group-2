@@ -27,6 +27,7 @@
 <body>
   <div id="map"></div>
   <script>
+    const moment = require("moment");
     // Note: This example requires that you consent to location sharing when
     // prompted by your browser. If you see the error "The Geolocation service
     // failed.", it means you probably did not give permission for the browser to
@@ -39,6 +40,10 @@
       });
       infoWindow = new google.maps.InfoWindow;
 
+
+     //NEED TO GET THIS FROM THE DATABASE????
+      let fieldWeWillGetFromQuestions = "Depression";
+
       // Try HTML5 geolocation.
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
@@ -47,8 +52,9 @@
             lng: position.coords.longitude
           };
           console.log(pos);
-          let betterDoctor = `https://api.betterdoctor.com/2016-03-01/doctors?query=Anxiety&location=${pos.lat}%2C${pos.lng}%2C%2050&sort=distance-asc&skip=0&limit=10&user_key=f66d8b491789282ebde86658f5bf614f`;
-          //console.log(betterDoctor);
+          let date1 = new Date();
+          let betterDoctor = `https://api.betterdoctor.com/${date1}/doctors?query=${fieldWeWillGetFromQuestions}&location=${pos.lat}%2C${pos.lng}%2C%2050&sort=distance-asc&skip=0&limit=10&user_key=f66d8b491789282ebde86658f5bf614f`;
+
 
           $.ajax({
             url: betterDoctor,
@@ -73,11 +79,11 @@
                 <div id="siteNotice">
                 </div>
                 <h1 id="firstHeading" class="firstHeading">${results[i].profile.first_name} ${results[i].profile.last_name}, ${results[i].profile.title}</h1>
+                <h2>${results[i].specialties[0].name}, ${results[i].specialties[0].description}<h2>
                 <div id="bodyContent">
                 <p>${results[i].profile.bio}</p> 
-                <p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194"> 
-                https://en.wikipedia.org/w/index.php?title=Uluru</a>  
-                (last visited June 22, 2009).</p> 
+                <p>Attribution: BetterDoctor.com, <a href="https://betterdoctor.com/"> 
+                https://betterdoctor.com/</a></p> 
                 </div> 
                 </div>`;
                 console.log(marker.position);
