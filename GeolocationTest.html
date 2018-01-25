@@ -54,7 +54,7 @@
           console.log(pos);
           let betterDoctor = `https://api.betterdoctor.com/2016-03-01/doctors?query=${fieldWeWillGetFromQuestions}&location=${pos.lat}%2C${pos.lng}%2C%2050&sort=distance-asc&skip=0&limit=10&user_key=f66d8b491789282ebde86658f5bf614f`;
 
-
+          //THIS IS CURRENTLY NOT ASYNC
           $.ajax({
             url: betterDoctor,
             method: "GET"
