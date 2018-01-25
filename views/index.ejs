@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Project 2 Temp</title>
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</head>
-
 <body>
-  <div class="container">
-    <div class="jumbotron">
-      <h1>Login Test</h1>
-      <hr>
-      <a href="/login" class="btn btn-default">Login</a>
-      <a href="/signup" class="btn btn-default">Signup</a>
+  <%- include('header') -%>
+  <div class="section" id="index-banner">
+      <div class="container">
+        <br><br>
+        <img id="logo" src="img/Kintsukuroi.png">
+        <div class="row center">
+          <div class="col s12">
+          <h5 class="header col s12 m8 push-m2 l8 push-l2">Feeling broken?<br>Find the resources to start putting yourself back together by taking our survey!</h5>
+        </div>
+        </div>
+        <div class="row center">
+          <a href="" id="get-started" class="btn-large waves-effect waves-light">Click here to get started!</a>
+        </div>
+      </div>
     </div>
-  </div>
+  <%- include('footer') -%>
 </body>
-
 </html>
