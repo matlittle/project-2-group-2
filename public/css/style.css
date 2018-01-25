@@ -23,12 +23,16 @@ a {
 	color: #dcc48e;
 }
 
+a:hover {
+  color: #51404f;
+}
+
 #logo {
 	max-width: 100%;
 	background-color: #d3c1c3;
-    display: block;
-    margin: 0 auto;
-    border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
 }
 
 .btn-large {
