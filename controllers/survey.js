@@ -50,13 +50,28 @@ module.exports.updateScores = async function(scores, id) {
 }
 
 
-module.exports.getUserScores = async function(id) {
+module.exports.getUserResults = async function(id) {
+  const scores = await orm.getUserScores(id).catch(logError);
+  console.log("scores: ", scores);
 
-}
+  const fields = [
+    scores[0].field1, 
+    scores[0].field2, 
+    scores[0].field3, 
+    scores[0].field4 
+  ];
 
+  const id = fields.indexOf( Math.max(fields) ) + 1;
 
-module.exports.getSpecialty = async function(id) {
+  console.log('fields: ', fields);
+  console.log('id: ', id);
   
+  const fieldName = await orm.getSpecialty(id).catch(logError);;
+
+  return {
+    scores: fields,
+    chosenField: fieldName
+  }
 }
 
 
