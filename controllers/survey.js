@@ -41,5 +41,6 @@ module.exports.updateScores = async function(scores, id) {
 
 
 function logError(err) {
+  console.log("./controllers/survey.js - error caught");
   console.log(err);
 }
