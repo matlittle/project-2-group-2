@@ -73,8 +73,8 @@ var map, infoWindow, contentString;
                 let contentString = `<div id="content">
                 <div id="siteNotice">
                 </div>
-                <h1 id="firstHeading" class="firstHeading">${results[i].profile.first_name} ${results[i].profile.last_name}, ${results[i].profile.title}</h1>
-                <h2>${results[i].specialties[0].name}, ${results[i].specialties[0].description}</h2>
+                <h4 id="firstHeading" class="firstHeading">${results[i].profile.first_name} ${results[i].profile.last_name}, ${results[i].profile.title}</h4>
+                <h5>${results[i].specialties[0].name}, ${results[i].specialties[0].description}</h5>
                 <div id="bodyContent">
                 <p>${results[i].profile.bio}</p> 
                 <p>You can call them at: ${results[i].practices[0].phones[0].number}</p> 
@@ -126,5 +126,7 @@ var map, infoWindow, contentString;
       infoWindow.open(map);
 
     }
+
+    
 //END MAP JAVASCRIPT
     
