@@ -60,11 +60,19 @@ module.exports.getUserScores = function(id) {
     connection.query('SELECT field1,field2,field3,field4 FROM users WHERE id ='+id, function(error, result) {
       if (error) reject (error);
 
-      resolve(result)
+      resolve(result);
     })
   })
 
 }
 
 module.exports.getSpecialty = function(id) {
+
+  return new Promise( function(resolve, reject) {
+    connection.query('SELECT spec_name FROM specialties WHERE spec_id='+id, function(error, result) {
+      if (error) reject (error);
+
+      resolve(result);
+    })
+  })
 }
