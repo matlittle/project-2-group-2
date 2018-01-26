@@ -53,9 +53,19 @@ a:hover {
 	color: #51404f;
 }
 
+.footer-copyright {
+	background-color: #81717a;
+}
+
+
 .icon-block {
   padding: 0 15px;
 }
 .icon-block .material-icons {
 	font-size: inherit;
+}
+
+#fill {
+  height: 800px;
+  max-width: 100%;
 }
