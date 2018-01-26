@@ -4,6 +4,7 @@
 <body>
 
   <%- include('header') -%>
+
     <main>
       <div class="section" id="index-banner">
         <div class="container">
@@ -21,26 +22,26 @@
             <a href="/questionnaire" id="get-started" class="btn-large waves-effect waves-light">Click here to get started!</a>
           </div>
 
-        <!-- Modal Trigger -->
+          <!-- Modal Trigger -->
 
-      <div class="row center">
-        <a href="#questionnaire" class="waves-effect waves-light btn-large modal-trigger">Click here to get started!</a>
+          <div class="row center">
+            <a href="#questionnaire" class="waves-effect waves-light btn-large modal-trigger">Click here to get started!</a>
+          </div>
+
+        </div>
       </div>
-
-    </div>
-  </div>
 
       <!-- Modal Structure -->
       <div id="questionnaire" class="modal">
-          <div class="modal-content">
-              <%- include('questionnaire') -%>
-          </div>
-          <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect btn-flat">Nevermind</a>
-          </div>
+        <div class="modal-content">
+          <%- include('questionnaire') -%>
         </div>
-
-  <%- include('footer') -%>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect btn-flat">Nevermind</a>
+        </div>
+      </div>
+    </main>
+    <%- include('footer') -%>
 
 </body>
 
