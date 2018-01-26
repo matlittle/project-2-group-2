@@ -50,6 +50,17 @@ module.exports.updateScores = async function(scores, id) {
 }
 
 
+module.exports.getUserScores = async function(id) {
+
+}
+
+
+module.exports.getSpecialty = async function(id) {
+  
+}
+
+
+
 function logError(err) {
   console.log("./controllers/survey.js - error caught");
   console.log(err);

@@ -53,4 +53,28 @@ module.exports = function(app) {
     res.json(result);
   });
 
+  //Get the user's results 
+  app.get('/api/survey/getResults', async function(req, res) {
+    console.log("./controllers/api-routes.js - api/survey/getResults ========");
+
+    const result = await survey.getUserScores("1");
+    console.log("result: ", result);
+
+    const fields = [
+      result[0].field1, 
+      result[0].field2, 
+      result[0].field3, 
+      result[0].field4 
+    ];
+
+    const id = fields.indexOf( Math.max(fields) );
+
+    console.log('fields: ', fields);
+    console.log('id: ', id);
+    
+    const fieldName = await survey.getSpecialty(id);
+
+    res.json(result);
+  });
+
 }
