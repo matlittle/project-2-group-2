@@ -3,7 +3,8 @@ body {
 	color: #51404f;
 	display: flex;
 	min-height: 100vh;
-	flex-direction: column;
+  flex-direction: column;
+  max-width: 100%;
 }
 
 main {
@@ -55,7 +56,8 @@ a:hover {
 
 .page-footer {
 	background-color: #fffcf2;
-	color: #51404f;
+  color: #51404f;
+  width: 100%;
 }
 
 .footer-copyright {
@@ -80,8 +82,11 @@ a:hover {
 }
 
 /* Always set the map height explicitly to define the size of the div element that contains the map. */
-
+#map-container {
+  padding: 10px;
+  max-width: 100%;
+}
 #map {
-  height: 100%;
+  height: 300px;
   width: 100%;
 }
