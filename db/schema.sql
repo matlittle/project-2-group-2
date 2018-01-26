@@ -19,14 +19,14 @@ CREATE TABLE specialties (
 );
 
 CREATE TABLE users (
-   id INT NOT NULL AUTO_INCREMENT,
-   email VARCHAR(254) NOT NULL,
-   password VARCHAR(254) NOT NULL,
-   field1 INT(2) DEFAULT 0,
-   field2 INT(2) DEFAULT 0,
-   field3 INT(2) DEFAULT 0,
-   field4 INT(2) DEFAULT 0,
-   survey_state INT(2) DEFAULT 0,
-   PRIMARY KEY (id)
+    id INT NOT NULL AUTO_INCREMENT,
+    email VARCHAR(254) NOT NULL,
+    password VARCHAR(254) NOT NULL,
+    field1 INT(2) DEFAULT 0,
+    field2 INT(2) DEFAULT 0,
+    field3 INT(2) DEFAULT 0,
+    field4 INT(2) DEFAULT 0,
+    survey_state INT(2) DEFAULT 0,
+    PRIMARY KEY (id)
 );
 

@@ -3,7 +3,7 @@ const connection = require('./connection.js');
 //Use this function to return the current user's surveyState value
 module.exports.getState = function(id) {
   return new Promise( function(resolve, reject) {
-    connection.query('SELECT surveyState FROM users WHERE id = '+id, function(error, result) {
+    connection.query('SELECT survey_state FROM users WHERE id = '+id, function(error, result) {
       if (error) reject (error);
 
       resolve(result);
@@ -29,7 +29,7 @@ module.exports.getQuestions = function(threshold) {
 module.exports.setThreshold = function(newThreshold, id) {
   
   return new Promise( function(resolve, reject) {
-    connection.query('UPDATE users SET surveyState = "'+ newThreshold + '" WHERE id = "'+id+'"', function(error, result) {
+    connection.query('UPDATE users SET survey_state = "'+ newThreshold + '" WHERE id = "'+id+'"', function(error, result) {
       if (error) reject(error);
 
       resolve(result);
@@ -50,6 +50,14 @@ module.exports.setFields = function(fields, id) {
       resolve(result);
     });
   });
+}
+
+
+
+module.exports.getUserScores = function(id) {
+}
+
+module.exports.setThreshold = function(id) {
 }
 
 
