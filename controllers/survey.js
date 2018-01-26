@@ -14,7 +14,12 @@ module.exports.initializeSurvey = async function(id) {
 
 
 module.exports.getNewQuestions = async function(id) {
-  const state = await orm.getState(id).catch(logError);
+  console.log('./controllers/survey.js - getNewQuestions ==================')
+  const stateResult = await orm.getState(id).catch(logError);
+
+  console.log('state: ', stateResult);
+
+  const state = stateResult[0].survey_state;
 
   const questions = await orm.getQuestions(state).catch(logError);
 
@@ -23,7 +28,12 @@ module.exports.getNewQuestions = async function(id) {
 
 
 module.exports.updateState = async function(id) {
-  const state = await orm.getState(id).catch(logError);
+  console.log('./controllers/survey.js - updateState ======================')
+  const stateResult = await orm.getState(id).catch(logError);
+
+  console.log('state: ', stateResult);
+  
+  const state = stateResult[0].survey_state;
 
   const newState = ( state === 0 ? 20 : state + 10 );
 
