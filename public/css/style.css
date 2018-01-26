@@ -27,6 +27,11 @@ a:hover {
   color: #51404f;
 }
 
+.logo-image {
+    max-height: 64px!important;
+    padding: 7px 0!important;
+}
+
 #logo {
 	max-width: 100%;
 	background-color: #d3c1c3;
@@ -44,7 +49,7 @@ a:hover {
 
 }
 
-.btn-large:hover {
+.btn-large:hover, .btn-large:active, .btn-large:focus {
 	background-color: #81717a;
 }
 
@@ -53,9 +58,23 @@ a:hover {
 	color: #51404f;
 }
 
+.footer-copyright {
+	background-color: #81717a;
+}
+
+#footer-btn {
+  background-color: #51404f;
+  color: #fffcf2;
+}
+
 .icon-block {
   padding: 0 15px;
 }
 .icon-block .material-icons {
 	font-size: inherit;
+}
+
+#fill {
+  height: 800px;
+  max-width: 100%;
 }

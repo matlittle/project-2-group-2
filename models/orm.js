@@ -53,12 +53,11 @@ module.exports.setFields = function(fields, id) {
 }
 
 
+
 module.exports.getUserScores = function(id) {
 }
 
 module.exports.setThreshold = function(id) {
 }
-
-
 
 

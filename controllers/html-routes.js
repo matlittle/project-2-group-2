@@ -5,6 +5,11 @@ module.exports = function (app) {
     res.render('index.ejs'); // load the index.ejs file
   });
 
+//About
+//show the about PAGE
+app.get('/about', function(req, res) {
+  res.render('about.ejs', { message: req.flash('aboutMessage') });
+});
 
   // SIGNUP ==============================
   // show the signup form
@@ -40,7 +45,7 @@ module.exports = function (app) {
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
 
-  // if user is authenticated in the session, carry on 
+  // if user is authenticated in the session, carry on
   if (req.isAuthenticated()) {
     return next();
   }
