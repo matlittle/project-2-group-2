@@ -33,7 +33,7 @@ module.exports.updateState = async function(id) {
 }
 
 
-module.exports.updateScores(scores, id) {
+module.exports.updateScores = async function(scores, id) {
   const newScores = await orm.setFields(scores, id).catch(logError);
 
   return newScores;
@@ -41,5 +41,6 @@ module.exports.updateScores(scores, id) {
 
 
 function logError(err) {
+  console.log("./controllers/survey.js - error caught");
   console.log(err);
 }
