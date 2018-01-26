@@ -5,11 +5,11 @@ module.exports = function (app) {
     res.render('index.ejs'); // load the index.ejs file
   });
 
-//About
-//show the about PAGE
-app.get('/about', function(req, res) {
-  res.render('about.ejs', { message: req.flash('aboutMessage') });
-});
+  //About
+  //show the about PAGE
+  app.get('/about', function(req, res) {
+    res.render('about.ejs', { message: req.flash('aboutMessage') });
+  });
 
   // SIGNUP ==============================
   // show the signup form
@@ -26,6 +26,13 @@ app.get('/about', function(req, res) {
     res.render('login.ejs', { message: req.flash('loginMessage') });
   });
 
+
+  // RESOURCES ===============================
+  // show the login form
+  app.get('/resources', function (req, res) {
+    // render the page and pass in any flash data if it exists
+    res.render('resources.ejs', { message: req.flash('resourcesMessage') });
+  });
 
   // PROFILE SECTION =====================
   // we will want this protected so you have to be logged in to visit
