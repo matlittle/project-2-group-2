@@ -70,7 +70,7 @@ module.exports.getUserResults = async function(id) {
 
   return {
     scores: fields,
-    chosenField: fieldName
+    chosenField: data[0].spec_name
   }
 }
 
