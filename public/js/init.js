@@ -1,3 +1,5 @@
+var map, infoWindow, contentString;
+
 (function($){
   $.fn.leanModal = function(options) {
     if( $('.modal').length > 0 ){
@@ -22,14 +24,15 @@
     backdrop: 'static', 
     keyboard: false
   }
-);
+)
+})(jQuery);
 
 //BEGIN MAP JAVASCRIPT
 // Note: This example requires that you consent to location sharing when
     // prompted by your browser. If you see the error "The Geolocation service
     // failed.", it means you probably did not give permission for the browser to
     // locate you.
-    var map, infoWindow, contentString;
+
     function initMap() {
       map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: -34.397, lng: 150.644 },
@@ -125,4 +128,3 @@
     }
 //END MAP JAVASCRIPT
     
-})(jQuery);
