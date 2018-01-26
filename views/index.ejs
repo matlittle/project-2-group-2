@@ -14,12 +14,24 @@
         </div>
       </div>
 
+        <!-- Modal Trigger -->
+
       <div class="row center">
-        <a href="/questionnaire" id="get-started" class="btn-large waves-effect waves-light">Click here to get started!</a>
+        <a href="#questionnaire" class="waves-effect waves-light btn-large modal-trigger">Click here to get started!</a>
       </div>
 
     </div>
   </div>
+
+      <!-- Modal Structure -->
+      <div id="questionnaire" class="modal">
+          <div class="modal-content">
+              <%- include('questionnaire') -%>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect btn-flat">Nevermind</a>
+          </div>
+        </div>
 
   <%- include('footer') -%>
 

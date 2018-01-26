@@ -40,7 +40,6 @@ a:hover {
   border-radius: 12px;
 }
 
-
 .btn-large {
 	background-color: #51404f;
 	border-radius: 12px;
@@ -50,7 +49,7 @@ a:hover {
 
 }
 
-.btn-large:hover {
+.btn-large:hover, .btn-large:active, .btn-large:focus {
 	background-color: #81717a;
 }
 
