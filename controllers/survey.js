@@ -61,12 +61,12 @@ module.exports.getUserResults = async function(id) {
     scores[0].field4 
   ];
 
-  const id = fields.indexOf( Math.max(fields) ) + 1;
+  const specId = fields.indexOf( Math.max(fields) ) + 1;
 
   console.log('fields: ', fields);
-  console.log('id: ', id);
+  console.log('id: ', specId);
   
-  const fieldName = await orm.getSpecialty(id).catch(logError);;
+  const fieldName = await orm.getSpecialty(specId).catch(logError);;
 
   return {
     scores: fields,
