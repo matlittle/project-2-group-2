@@ -80,8 +80,7 @@
                 <h2>${results[i].specialties[0].name}, ${results[i].specialties[0].description}</h2>
                 <div id="bodyContent">
                 <p>${results[i].profile.bio}</p> 
-                <p>Attribution: BetterDoctor.com, <a href="https://betterdoctor.com/"> 
-                https://betterdoctor.com/</a></p> 
+                <p>You can call them at: ${results[i].practices[0].phones[0].number}</p> 
                 </div> 
                 </div>`;
                 console.log(marker.position);
