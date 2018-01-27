@@ -5,6 +5,8 @@ module.exports = function(app) {
   //Initialize scores and threshold to 0
   app.put('/api/survey/initSurvey', async function(req, res) {
     console.log("./controllers/api-routes.js - api/survey/initSurvey ========");
+
+    console.log("req.user.id: ", req.user.id);
     
     const result = await survey.initializeSurvey(req.user.id);
 
@@ -16,6 +18,8 @@ module.exports = function(app) {
   //Get the next round of questions
   app.get('/api/survey/getQuestions', async function(req, res) {
     console.log("./controllers/api-routes.js - api/survey/getQuestions ======");
+
+    console.log("req.user.id: ", req.user.id);
     
     const result = await survey.getNewQuestions(req.user.id);
 
@@ -27,6 +31,8 @@ module.exports = function(app) {
   //Update the current threshold
   app.put('/api/survey/updateThreshold', async function(req, res) {
     console.log("./controllers/api-routes.js - api/survey/updateThreshold ===");
+
+    console.log("req.user.id: ", req.user.id);
     
     const result = await survey.updateState(req.user.id);
 
