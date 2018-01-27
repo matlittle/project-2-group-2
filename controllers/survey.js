@@ -40,10 +40,6 @@ module.exports.getNewQuestions = async function(id) {
   return currQuestions;
 }
 
-module.exports.getNewQuestions(1).then(function(results) {
-  console.log(results);
-})
-
 module.exports.updateState = async function(id) {
   console.log('./controllers/survey.js - updateState ======================')
   const stateResult = await orm.getState(id).catch(logError);
