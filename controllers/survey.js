@@ -16,6 +16,8 @@ module.exports.initializeSurvey = async function(id) {
 module.exports.getNewQuestions = async function(id) {
   console.log('./controllers/survey.js - getNewQuestions ==================')
   const stateResult = await orm.getState(id).catch(logError);
+  const userScores = await orm.getUserScores(id).catch(logError);
+  var currQuestions = [];
 
   console.log('state: ', stateResult);
 
@@ -23,9 +25,20 @@ module.exports.getNewQuestions = async function(id) {
 
   const questions = await orm.getQuestions(state).catch(logError);
 
-  return questions;
+  // Functionality to automatically exclude questions that do not meet the userscore thresholds for a field
+  for (var i = 0; i < questions.length; i ++ ) {
+    if (questions[i].threshold <= userScores[0].field1 && questions[i].field === 1) {
+      currQuestions.push(questions[i]);
+    } else if (questions[i].threshold <= userScores[0].field2 && questions[i].field === 2) {
+      currQuestions.push(questions[i]);
+    } else if (questions[i].threshold <= userScores[0].field3 && questions[i].field === 3) {
+      currQuestions.push(questions[i]);
+    } else if (questions[i].threshold <= userScores[0].field4 && questions[i].field === 4) {
+      currQuestions.push(questions[i]);
+    }
+  }
+  return currQuestions;
 }
-
 
 module.exports.updateState = async function(id) {
   console.log('./controllers/survey.js - updateState ======================')
