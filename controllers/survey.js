@@ -87,8 +87,10 @@ module.exports.getUserResults = async function(id) {
   console.log('fields: ', fields);
   console.log('id: ', specId);
   
-  const fieldName = await orm.getSpecialty(specId).catch(logError);;
+  const fieldName = await orm.getSpecialty(specId).catch(logError);
 
+  console.log("fieldName: ", fieldName);
+  
   return {
     scores: fields,
     chosenField: fieldName[0].spec_name
