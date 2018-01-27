@@ -149,3 +149,7 @@ p {
 .spec-div {
   display: none;
 }
+
+#main-specialty {
+  display: none;
+}

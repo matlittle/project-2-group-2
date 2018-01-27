@@ -42,7 +42,8 @@ var map, infoWindow, contentString, spec_type;
 
 
      //NEED TO GET THIS FROM THE DATABASE????
-      let fieldWeWillGetFromQuestions = "Depression";
+      let fieldWeWillGetFromQuestions = $("#main-specialty").text();
+      showTypeInfo();
 
       // Try HTML5 geolocation.
       if (navigator.geolocation) {
@@ -133,9 +134,9 @@ var map, infoWindow, contentString, spec_type;
 //END MAP JAVASCRIPT
     
 
-function findType() {
-  spec_type = $("#main-specialty").attr("data-spec");
-  console.log("spec_type: ", spec_type);
+function showTypeInfo() {
+  spec_type = $("#main-specialty").text();
 
-  
+  $(`#${spec_type}`).css({'display': 'block'});
+
 }
