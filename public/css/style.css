@@ -144,3 +144,7 @@ p {
 .photo {
   padding-left: 17%;
 }
+
+.spec-div {
+  display: none;
+}
