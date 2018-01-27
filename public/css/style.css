@@ -1,5 +1,6 @@
 body {
-	background-color: #fffcf2;
+  background-image: url("img/kintsugibg.jpg");
+  background-color: #fffcf2;
 	color: #51404f;
 	display: flex;
 	min-height: 100vh;
@@ -14,10 +15,6 @@ main {
 nav {
 	background-color: #d3c1c3;
 
-}
-
-ul {
-	padding-right: 2%;
 }
 
 a {
