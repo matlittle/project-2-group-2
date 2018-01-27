@@ -4,6 +4,8 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 8080;
 
+const path = require("path");
+
 const passport = require('passport');
 const flash = require('connect-flash');
 
@@ -22,7 +24,7 @@ require('./config/passport')(passport); // pass passport for configuration
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(express.static("./public"));
+app.use( express.static( path.join(__dirname, "public") ) );
 
 //Heroku SSL redirect
 const sslRedirect = require('heroku-ssl-redirect');
