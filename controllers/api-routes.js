@@ -6,8 +6,7 @@ module.exports = function(app) {
   app.put('/api/survey/initSurvey', async function(req, res) {
     console.log("./controllers/api-routes.js - api/survey/initSurvey ========");
     
-    //const result = await survey.initializeSurvey(req.user.id);
-    const result = await survey.initializeSurvey("1");
+    const result = await survey.initializeSurvey(req.user.id);
 
     console.log("result: ", result);
 
@@ -18,8 +17,7 @@ module.exports = function(app) {
   app.get('/api/survey/getQuestions', async function(req, res) {
     console.log("./controllers/api-routes.js - api/survey/getQuestions ======");
     
-    //const result = await survey.getNewQuestions(req.user.id);
-    const result = await survey.getNewQuestions("1");
+    const result = await survey.getNewQuestions(req.user.id);
 
     console.log("result: ", result);
 
@@ -30,8 +28,7 @@ module.exports = function(app) {
   app.put('/api/survey/updateThreshold', async function(req, res) {
     console.log("./controllers/api-routes.js - api/survey/updateThreshold ===");
     
-    //const result = await survey.updateState(req.user.id);
-    const result = await survey.updateState("1");
+    const result = await survey.updateState(req.user.id);
 
     console.log("result: ", result);
 
@@ -44,10 +41,8 @@ module.exports = function(app) {
    
     console.log(req.body);
     const scores = req.body.scores;
-    //const scores = { f1:10, f2: 10, f3: 10, f4: 10 };
 
-   // const result = await survey.updateScores(scores, req.user.id);
-    const result = await survey.updateScores(scores, "1");
+    const result = await survey.updateScores(scores, req.user.id);
 
     console.log("result: ", result);
 
@@ -58,8 +53,7 @@ module.exports = function(app) {
   app.get('/api/survey/getResults', async function(req, res) {
     console.log("./controllers/api-routes.js - api/survey/getResults ========");
 
-    //const result = await survey.getUserResults(req.user.id);
-    const result = await survey.getUserResults("1");
+    const result = await survey.getUserResults(req.user.id);
     
     console.log("result: ", result);
     
