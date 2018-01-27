@@ -130,3 +130,11 @@ p {
   height: 500px;
   width: 100%;
 }
+
+/* about page */
+
+.about {
+  max-width:75%;
+  position: relative;
+
+}
