@@ -34,10 +34,10 @@ module.exports = function (app) {
     let sId = req.params.id;
     let type;
 
-    if (sId === 1) {type = "Anxiety"};
-    if (sId === 2) {type = "Depression"};
-    if (sId === 3) {type = "ADHD"};
-    if (sId === 4) {type = "PTSD"};
+    if (sId === 1) {type = "anxiety"};
+    if (sId === 2) {type = "depression"};
+    if (sId === 3) {type = "adhd"};
+    if (sId === 4) {type = "ptsd"};
 
     // render the page and pass in any flash data if it exists
     res.render('resources.ejs', { 

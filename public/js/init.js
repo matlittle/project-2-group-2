@@ -1,4 +1,4 @@
-var map, infoWindow, contentString;
+var map, infoWindow, contentString, spec_type;
 
 (function($){
   $.fn.leanModal = function(options) {
@@ -132,3 +132,10 @@ var map, infoWindow, contentString;
     
 //END MAP JAVASCRIPT
     
+
+function findType() {
+  spec_type = $("#main-specialty").attr("data-spec");
+  console.log("spec_type: ", spec_type);
+
+  
+}
