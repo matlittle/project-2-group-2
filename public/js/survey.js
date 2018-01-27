@@ -18,6 +18,8 @@ $(document).on('click', '#false-btn', falseAnswer);
 
 
 function initSurvey() {
+  $('#question-container').empty();
+
   scores.f1 = scores.f2 = scores.f3 = scores.f4 = 0;
 
   $.ajax({
@@ -37,7 +39,7 @@ function getQuestions(res) {
 
 function showQuestions(questions) {
   console.log(questions);
-  var surveyQuestions = questions;
+  surveyQuestions = questions;
 
   if (questions.length < 1) {
     return endSurvey();
@@ -47,6 +49,10 @@ function showQuestions(questions) {
 }
 
 function showNextQuestion(questions, i = 0) {
+
+  console.log('questions: ', questions);
+  console.log('idx: ', i);
+
   if (i >= questions.length) {
     return getMoreQuestions();
   }
@@ -55,19 +61,19 @@ function showNextQuestion(questions, i = 0) {
 
   const question = $(`<h4 id="question">`).text(questions[i].question);
   $(question).attr('data-idx', i);
-  $(question).attr('data-field', question[i].field);
+  $(question).attr('data-field', questions[i].field);
 
   $('#question-container')
-    .append(`<h1>Here's your questionnaire!</h1>`)
-    .append('<br>')
     .append(question)
     .append( buildBtn(true) )
     .append( buildBtn(false) );
+
+  $('#question-container').removeClass('scale-out');
 }
 
 function buildBtn(bool) {
   const link = $(`<a class="waves-effect waves-light btn-large">`);
-  $(link).attr('id', `data-${bool ? 'true-btn' : 'false-btn'}`);
+  $(link).attr('id', `${bool ? 'true-btn' : 'false-btn'}`);
 
   const icon = $(`<i class="material-icons left"></i>`);
   $(icon).text( (bool ? 'thumb_up' : 'thumb_down') );
@@ -75,25 +81,55 @@ function buildBtn(bool) {
   return $(link).append( icon ).append( (bool ? 'True' : 'False') );
 }
 
-
 function trueAnswer(e) {
   e.preventDefault();
 
+  $('#question-container').addClass('scale-out');
+
   let field = `f${$('#question').attr('data-field')}`;
-  scores.field += 10;
+  scores[field] += 10;
 
-  showNextQuestion(surveyQuestions, parseInt($(this).attr('data-idx')) );
+  let idx = parseInt( $('#question').attr('data-idx') );
+
+  setTimeout( function () {
+    showNextQuestion(surveyQuestions, idx + 1);
+  }, 1000);
+  
 }
-
 
 function falseAnswer(e) {
   e.preventDefault();
 
-  showNextQuestion(surveyQuestions, parseInt($(this).attr('data-idx')) );
+  $('#question-container').addClass("scale-out");
+
+  let idx = parseInt( $('#question').attr('data-idx') );
+
+  setTimeout( function () {
+    showNextQuestion(surveyQuestions, idx + 1);
+  }, 1000);
 }
 
+async function getMoreQuestions() {
+  console.log('scores: ', scores);
 
+  const updateThreshold = await $.ajax({
+    method: 'PUT',
+    url: `${domain}/api/survey/updateThreshold`
+  })
+  
+  const updateScores = await $.ajax({
+    method: 'PUT',
+    url: `${domain}/api/survey/updateScores`,
+    data: scores,
+    success: getQuestions
+  });
 
+}
+
+function endSurvey() {
+  $('#question-container').empty();
+  $('#question-container').append("Done");
+}
 
 
 
