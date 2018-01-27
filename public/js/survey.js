@@ -41,11 +41,12 @@ function getQuestions(res) {
 
 function showQuestions(questions) {
   console.log(questions);
-  surveyQuestions = questions;
 
   if (questions.length < 1) {
     return endSurvey();
   }
+
+  surveyQuestions = questions;
 
   showNextQuestion(surveyQuestions);
 }
