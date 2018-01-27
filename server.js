@@ -40,8 +40,8 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 require('./controllers/api-routes.js')(app);
 
 //Heroku SSL redirect
-const sslRedirect = require('heroku-ssl-redirect');
-app.use(sslRedirect());
+//const sslRedirect = require('heroku-ssl-redirect');
+//app.use(sslRedirect());
 
 // attach login routes to express server
 require('./controllers/login-routes.js')(app, passport);
