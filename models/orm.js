@@ -41,6 +41,20 @@ module.exports.setThreshold = function(newThreshold, id) {
 // This is used to update the user's individual field scores, so we can filter questions by fields that apply to the user.  This function takes an object of the four fields scores from the user survey question batch, and the user id of the user taking the survey.
 module.exports.setFields = function(fields, id) {
 
+  const query = `UPDATE users SET field1 = ?, field2 = ?, field3 = ?, field4 = ? where id = ?`
+
+  return new Promise( function(resolve, reject) {
+    connection.query(query, [fields.f1, fields.f2, fields.f3, fields.f4, id], function(error, result) {
+      if (error) reject (error);
+
+      resolve(result);
+    });
+  });
+}
+
+// This is used to update the user's individual field scores, so we can filter questions by fields that apply to the user.  This function takes an object of the four fields scores from the user survey question batch, and the user id of the user taking the survey.
+module.exports.updateFields = function(fields, id) {
+
   const query = `UPDATE users SET field1 = field1+?, field2 = field2+?, field3 = field3+?, field4 = field4+? where id = ?`
 
   return new Promise( function(resolve, reject) {
