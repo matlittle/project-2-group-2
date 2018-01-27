@@ -32,12 +32,16 @@ module.exports = function (app) {
   app.get('/resources/:id', function (req, res) {
     //req.params.id
     let sId = req.params.id;
-    let type;
+    console.log(req.params);
+    console.log(sId);
+    var type;
 
-    if (sId === 1) {type = "anxiety"};
-    if (sId === 2) {type = "depression"};
-    if (sId === 3) {type = "adhd"};
-    if (sId === 4) {type = "ptsd"};
+    if (sId === "1") {type = "anxiety"};
+    if (sId === "2") {type = "depression"};
+    if (sId === "3") {type = "adhd"};
+    if (sId === "4") {type = "ptsd"};
+    
+    console.log(type);
 
     // render the page and pass in any flash data if it exists
     res.render('resources.ejs', { 

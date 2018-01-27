@@ -3,7 +3,7 @@
 
 <%- include('header') -%>
 
-  <div id="main-specialty" class="section" data-spec="<%= type %>">
+  <div class="section">
     <div class="container">
       <div class="row center-align">
         <div class="col s12 m10 push-m1 l10 push-l1">
@@ -12,8 +12,8 @@
           <hr>
 
           <!-- Beginning of specific field descriptions -->
-          <div class="row center-align">
-            <div class="col s12 m12 l12 spec-div" id="anxiety">
+          <div class="row center-align spec-div" id="anxiety">
+            <div class="col s12 m12 l12">
               <h4>We think you may be suffering from Generalized Anxiety Disorder</h4>
               <br>
               <p>People with generalized anxiety disorder (GAD) experience excessive anxiety and worry, often about health,
@@ -44,8 +44,8 @@
               </ul>
             </div>
           </div>
-          <div class="row center-align">
-            <div class="col s12 m12 l12 spec-div" id="ptsd">
+          <div class="row center-align spec-div" id="ptsd">
+            <div class="col s12 m12 l12">
               <h4>We think you may be suffering from Post Traumatic Stress Disorder</h4>
               <br>
               <p>Diagnostic criteria for PTSD include a history of exposure to a traumatic event that meets specific stipulations
@@ -69,8 +69,8 @@
               </ul>
             </div>
           </div>
-          <div class="row center-align">
-            <div class="col s12 m12 l12 spec-div" id="adhd">
+          <div class="row center-align spec-div" id="adhd">
+            <div class="col s12 m12 l12">
               <h4>We think you may be suffering from Attention-Deficit/Hyperactivity Disorder</h4>
               <br>
               <p>Adult attention-deficit/hyperactivity disorder (ADHD) is a mental health disorder that includes a combination
@@ -96,8 +96,8 @@
               </ul>
             </div>
           </div>
-          <div class="row center-align">
-            <div class="col s12 m12 l12 spec-div" id="depression">
+          <div class="row center-align spec-div" id="depression">
+            <div class="col s12 m12 l12">
               <h4>We think you may be suffering from Major Depressive Disorder</h4>
               <br>
               <p>A mental health disorder characterized by persistently depressed mood or loss of interest in activities, causing
@@ -276,6 +276,7 @@
         </div>
       </div>
 
+      <p id="main-specialty"><%= type %></p>
 
       <%- include('footer') -%>
 
