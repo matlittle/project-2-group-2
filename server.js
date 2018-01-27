@@ -24,6 +24,10 @@ app.use(bodyParser.json());
 
 app.use(express.static("./public"));
 
+//Heroku SSL redirect
+const sslRedirect = require('heroku-ssl-redirect');
+app.use(sslRedirect());
+
 // required for passport
 app.use(session({
   secret: 'beerisgood',   // session secret
@@ -36,18 +40,12 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
 // routes ======================================================================
-// attach api routes to interact with data
-require('./controllers/api-routes.js')(app);
-
-//Heroku SSL redirect
-//const sslRedirect = require('heroku-ssl-redirect');
-//app.use(sslRedirect());
-
 // attach login routes to express server
 require('./controllers/login-routes.js')(app, passport);
 // attach html routes that server pages
 require('./controllers/html-routes.js')(app);
-
+// attach api routes to interact with data
+require('./controllers/api-routes.js')(app);
 
 // launch ======================================================================
 app.listen(port, () => {
