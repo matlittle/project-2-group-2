@@ -72,6 +72,7 @@ module.exports.updateScores = async function(scores, id) {
 
 
 module.exports.getUserResults = async function(id) {
+  console.log("id: ", id);
   const scores = await orm.getUserScores(id).catch(logError);
   console.log("scores: ", scores);
 
@@ -82,15 +83,18 @@ module.exports.getUserResults = async function(id) {
     scores[0].field4 
   ];
 
-  const specId = fields.indexOf( Math.max(fields) ) + 1;
+  const specId = fields.indexOf( Math.max(...fields) ) + 1;
 
   console.log('fields: ', fields);
+  console.log('Math.max(fields): ', Math.max(...fields));
+  console.log('fields.indexOf( Math.max(fields) ): ', fields.indexOf( Math.max(...fields) ));
+  console.log('id type: ', typeof specId);
   console.log('id: ', specId);
   
   const fieldName = await orm.getSpecialty(specId).catch(logError);
 
   console.log("fieldName: ", fieldName);
-  
+
   return {
     scores: fields,
     chosenField: fieldName[0].spec_name
