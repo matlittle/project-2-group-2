@@ -29,9 +29,21 @@ module.exports = function (app) {
 
   // RESOURCES ===============================
   // show the login form
-  app.get('/resources', function (req, res) {
+  app.get('/resources/:id', function (req, res) {
+    //req.params.id
+    let sId = req.params.id;
+    let type;
+
+    if (sId === 1) {type = "Anxiety"};
+    if (sId === 2) {type = "Depression"};
+    if (sId === 3) {type = "ADHD"};
+    if (sId === 4) {type = "PTSD"};
+
     // render the page and pass in any flash data if it exists
-    res.render('resources.ejs', { message: req.flash('resourcesMessage') });
+    res.render('resources.ejs', { 
+      message: req.flash('resourcesMessage'),
+      type: type
+    });
   });
 
   // PROFILE SECTION =====================
