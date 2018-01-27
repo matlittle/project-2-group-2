@@ -27,13 +27,21 @@ module.exports.getNewQuestions = async function(id) {
 
   // Functionality to automatically exclude questions that do not meet the userscore thresholds for a field
   for (var i = 0; i < questions.length; i ++ ) {
-    if (questions[i].threshold <= userScores[0].field1 && questions[i].field === 1) {
+    if (questions[i].threshold <= userScores[0].field1 && 
+        questions[i].field === 1 && 
+        userScores[0].field1 <= 50) {
       currQuestions.push(questions[i]);
-    } else if (questions[i].threshold <= userScores[0].field2 && questions[i].field === 2) {
+    } else if (questions[i].threshold <= userScores[0].field2 
+        && questions[i].field === 2 && 
+        userScores[0].field2 <= 50) {
       currQuestions.push(questions[i]);
-    } else if (questions[i].threshold <= userScores[0].field3 && questions[i].field === 3) {
+    } else if (questions[i].threshold <= userScores[0].field3 
+        && questions[i].field === 3 && 
+        userScores[0].field3 <= 50) {
       currQuestions.push(questions[i]);
-    } else if (questions[i].threshold <= userScores[0].field4 && questions[i].field === 4) {
+    } else if (questions[i].threshold <= userScores[0].field4 
+        && questions[i].field === 4 && 
+        userScores[0].field4 <= 50) {
       currQuestions.push(questions[i]);
     }
   }
