@@ -143,5 +143,19 @@ function endSurvey() {
   }).then( function(res) {
     console.log("Then after survey results");
     console.log("res: ", res);
+
+    let specId;
+    
+    if (res === "Anxiety") {
+      specId = 1;
+    } else if (res === "Depression"){
+      specId = 2;
+    } else if (res === "ADHD") {
+      specId = 3;
+    } else {
+      specId = 4;
+    }
+  
+    window.location.replace(`https://kintsukuroi.herokuapp.com/resources${specId}`);
   });
 }
