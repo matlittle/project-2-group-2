@@ -144,7 +144,7 @@ function endSurvey() {
     console.log("Then after survey results");
     console.log("res: ", res);
 
-    let specId;
+    var specId;
     
     if (res === "Anxiety") {
       specId = 1;
