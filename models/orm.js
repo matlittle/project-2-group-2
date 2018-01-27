@@ -80,9 +80,14 @@ module.exports.getUserScores = function(id) {
 
 module.exports.getSpecialty = function(id) {
 
+  console.log( 'SELECT spec_name FROM specialties WHERE spec_id='+id );
+
   return new Promise( function(resolve, reject) {
     connection.query('SELECT spec_name FROM specialties WHERE spec_id='+id, function(error, result) {
       if (error) reject (error);
+
+      console.log("get spec: ", result);
+      console.log("error: ", error);
 
       resolve(result);
     })
