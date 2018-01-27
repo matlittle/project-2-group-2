@@ -6,9 +6,9 @@ module.exports = function(app) {
   app.put('/api/survey/initSurvey', isLoggedIn, async function(req, res) {
     console.log("./controllers/api-routes.js - api/survey/initSurvey ========");
 
-    console.log("req.user.id: ", req.user.id);
+    console.log("req.user: ", req.user);
     
-    const result = await survey.initializeSurvey(req.user.id);
+    const result = await survey.initializeSurvey(req.user[0].id);
 
     console.log("result: ", result);
 
@@ -19,9 +19,9 @@ module.exports = function(app) {
   app.get('/api/survey/getQuestions', isLoggedIn, async function(req, res) {
     console.log("./controllers/api-routes.js - api/survey/getQuestions ======");
 
-    console.log("req.user.id: ", req.user.id);
+    console.log("req.user: ", req.user);
     
-    const result = await survey.getNewQuestions(req.user.id);
+    const result = await survey.getNewQuestions(req.user[0].id);
 
     console.log("result: ", result);
 
@@ -32,9 +32,9 @@ module.exports = function(app) {
   app.put('/api/survey/updateThreshold', isLoggedIn, async function(req, res) {
     console.log("./controllers/api-routes.js - api/survey/updateThreshold ===");
 
-    console.log("req.user.id: ", req.user.id);
+    console.log("req.user: ", req.user);
     
-    const result = await survey.updateState(req.user.id);
+    const result = await survey.updateState(req.user[0].id);
 
     console.log("result: ", result);
 
@@ -48,7 +48,7 @@ module.exports = function(app) {
     console.log(req.body);
     const scores = req.body.scores;
 
-    const result = await survey.updateScores(scores, req.user.id);
+    const result = await survey.updateScores(scores, req.user[0].id);
 
     console.log("result: ", result);
 
@@ -59,7 +59,7 @@ module.exports = function(app) {
   app.get('/api/survey/getResults', isLoggedIn, async function(req, res) {
     console.log("./controllers/api-routes.js - api/survey/getResults ========");
 
-    const result = await survey.getUserResults(req.user.id);
+    const result = await survey.getUserResults(req.user[0].id);
     
     console.log("result: ", result);
     
