@@ -1,46 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
 
-  <%- include('header') -%>
-  
+<%- include('header') -%>
+
   <div class="section">
     <div class="container">
-      <div class="row ">
-        <div class="col s12 m8 push-m2 l8 push-l2">
+      <div class="row">
+        <div class="col s12 m10 push-m1 l10 push-l1">
           <h2>Resources</h2>
           <h5>Based on your responses, we think these might help you.</h5>
-            <div class="row">
-              <div class="col s12 m6">
-                <div class="card">
-                  <div class="card-content">
-                    <span class="card-title">Guided Meditation</span>
-                    <p>An introduction to mindfulness meditation that you can practice on your own.</p>
-                  </div>
-                <div class="card-action">
-                  <a href="http://marc.ucla.edu/mindful-meditations">UCLA Mindful Meditations</a>
-                </div>
+
+          <div class="row">
+
+            <div class="col s12 m12 l12">
+              <div id="map-container" class="container">
+
+                <div id="map"></div>
+
               </div>
-                <div class="card">
-                  <div class="card-content">
-                    <span class="card-title">Guided Meditation</span>
-                    <p>An introduction to mindfulness meditation that you can practice on your own.</p>
+            </div>
+          </div>
+          <!--END MAP-->
+
+          <!-- START OF RESOURCE CARDS AND BLURBS -->
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <div class="card large">
+                <div class="card-content center-align">
+                  <span class="card-title">Therapy</span>
+                  <p>TEXT HERE ABOUT THERAPYgit</p>
+                </div>
+                <div class="card-tabs">
+                  <ul class="tabs tabs-fixed-width">
+                    <li class="tab">
+                      <a href="#test1">Open Path Collective</a>
+                    </li>
+                    <li class="tab">
+                      <a class="active" href="#test2">Open Counseling</a>
+                    </li>
+                    <li class="tab">
+                      <a href="#test3">Instawell</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-content grey lighten-4">
+                  <div id="test1">Founded in 2012, and launched in the spring of 2013, Open Path Psychotherapy Collective is a nationwide
+                    network of mental health professionals dedicated to providing in-office mental health care—at a steeply
+                    reduced rate—to individuals, couples, children, and families in need. Since our founding, Open Path has
+                    matched more than 9,000 clients across the country to affordable psychotherapeutic care. Additionally,
+                    Open Path has had over 20,000 students sign on to take one of our affordable online wellness classes.
+                    <div class="card-action">
+                      <a href="https://openpathcollective.org/">Open Path Collective</a>
+                    </div>
                   </div>
-                <div class="card-action">
-                  <a href="http://marc.ucla.edu/mindful-meditations">UCLA Mindful Meditations</a>
+
+                  <div id="test2">Another option for finding affordable counseling.
+                    <div class="card-action">
+                      <a href="https://www.opencounseling.com/">OpenCounseling</a>
+                    </div>
+                  </div>
+                  <div id="test3">Test 3</div>
                 </div>
               </div>
             </div>
           </div>
+
+
+
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <div class="card">
+                <div class="card-content center-align">
+                  <span class="card-title">Guided Meditation</span>
+                  <p>Meditation is a really helpful activity that can help with many problems.</p>
+                </div>
+                <div class="card-tabs">
+                  <ul class="tabs tabs-fixed-width">
+                    <li class="tab">
+                      <a href="#test4">UCLA Mindful Meditations</a>
+                    </li>
+                    <li class="tab">
+                      <a class="active" href="#test5">Headspace</a>
+                    </li>
+                    <li class="tab">
+                      <a href="#test6">Test 3</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-content grey lighten-4">
+                  <div id="test4">A free, guided introduction to mindfulness meditation that you can practice on your own provided by UCLA
+                    Health.
+                    <div class="card-action">
+                      <a href="http://marc.ucla.edu/mindful-meditations">UCLA Mindful Meditations</a>
+                    </div>
+                  </div>
+
+                  <div id="test5">A website that provides guided meditation and mindfulness exercises. They have mobile apps for both Android
+                    and Apple, so you can learn to meditate wherever, whenever. -"A personal meditation guide, right in your
+                    pocket"
+                    <div class="card-action">
+                      <a href="https://www.headspace.com/">Headspace</a>
+                    </div>
+                  </div>
+                  <div id="test6">Test 3</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- End Resources -->
         </div>
       </div>
-    </div>
-  </div>
 
-  <%- include('footer') -%>
-  
-</body>
+
+      <%- include('footer') -%>
 
 </html>
-
-

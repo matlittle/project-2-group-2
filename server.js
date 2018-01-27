@@ -40,6 +40,8 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 require('./controllers/login-routes.js')(app, passport); 
 // attach html routes that server pages
 require('./controllers/html-routes.js')(app); 
+// attach api routes to interact with data
+require('./controllers/api-routes.js')(app); 
 
 // launch ======================================================================
 app.listen(port, () => {

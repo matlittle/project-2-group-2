@@ -3,7 +3,8 @@ body {
 	color: #51404f;
 	display: flex;
 	min-height: 100vh;
-	flex-direction: column;
+  flex-direction: column;
+  max-width: 100%;
 }
 
 main {
@@ -27,6 +28,15 @@ a:hover {
   color: #51404f;
 }
 
+p {
+  font-weight: bold;
+}
+
+.logo-image {
+    max-height: 64px!important;
+    padding: 7px 0!important;
+}
+
 #logo {
 	max-width: 100%;
 	background-color: #d3c1c3;
@@ -44,13 +54,23 @@ a:hover {
 
 }
 
-.btn-large:hover {
+.btn-large:hover, .btn-large:active, .btn-large:focus {
 	background-color: #81717a;
 }
 
 .page-footer {
 	background-color: #fffcf2;
-	color: #51404f;
+  color: #51404f;
+  width: 100%;
+}
+
+.footer-copyright {
+	background-color: #81717a;
+}
+
+#footer-btn {
+  background-color: #51404f;
+  color: #fffcf2;
 }
 
 .icon-block {
@@ -58,4 +78,19 @@ a:hover {
 }
 .icon-block .material-icons {
 	font-size: inherit;
+}
+
+#fill {
+  height: 800px;
+  max-width: 100%;
+}
+
+/* Always set the map height explicitly to define the size of the div element that contains the map. */
+#map-container {
+  padding: 10px;
+  max-width: 100%;
+}
+#map {
+  height: 500px;
+  width: 100%;
 }

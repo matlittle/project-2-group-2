@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
-  
-  <%- include('header') -%>
 
-  <div class="section" id="index-banner">
-    <div class="container">
-      <br><br>
-      <img id="logo" src="img/Kintsukuroi.png">
-      <div class="row center">
-        <div class="col s12">
-          <h5 class="header col s12 m8 push-m2 l8 push-l2">Feeling broken?<br>Find the resources to start putting yourself back together by taking our survey!</h5>
+    <%- include('header') -%>
+
+      <div class="section" id="index-banner">
+        <div class="container">
+          <div class="row center">
+            <div class="col s12">
+              <h5 class="header col s12 m8 push-m2 l8 push-l2">Feeling broken?
+                <br>Find the resources to start putting yourself back together by taking our survey!</h5>
+            </div>
+          </div>
+
+          <!-- Modal Trigger -->
+          <div class="row center">
+            <a href="#questionnaire" class="waves-effect waves-light btn-large modal-trigger">Click here to get started!</a>
+          </div>
+
         </div>
       </div>
 
-      <div class="row center">
-        <a href="/questionnaire" id="get-started" class="btn-large waves-effect waves-light">Click here to get started!</a>
+      <!-- Modal Structure -->
+      <div id="questionnaire" class="modal">
+        <div class="modal-content">
+          <%- include('questionnaire') -%>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect btn-flat">Nevermind</a>
+        </div>
       </div>
-
-    </div>
-  </div>
-
-  <%- include('footer') -%>
-
-</body>
+          
+    <%- include('footer') -%>
 
 </html>

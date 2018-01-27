@@ -1,47 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
 
-  <%- include('header') -%>
+    <%- include('header') -%>
 
-  <div class="container">
-    <div class="col s10 push-s1 m8 push-m2 l6 push-l3">
+      <div class="container">
+        <div class="col s10 push-s1 m8 push-m2 l6 push-l3">
 
-      <h1>Login</h1>
-      <p>I knew you looked familiar.</p>
-      <br>
+          <h1>Login</h1>
+          <p>I knew you looked familiar.</p>
+          <br>
 
-      <!-- show any messages that come back with authentication -->
-      <% if (message.length > 0) { %>
-        <div class="alert alert-danger">
-          <%= message %>
+          <!-- show any messages that come back with authentication -->
+          <% if (message.length > 0) { %>
+            <div class="alert alert-danger">
+              <%= message %>
+            </div>
+            <% } %>
+
+          <!-- LOGIN FORM -->
+          <form action="/login" method="post">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="text" class="form-control" name="email">
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" name="password">
+            </div>
+
+            <button type="submit" class="btn-large">Login</button>
+          </form>
+
+          <hr>
+
+          <p>Don't have an account? Just kidding, go <a href="/signup">Sign Up</a>!</p>
+          <p>Or go <a href="/">home</a>.</p>
+
         </div>
-        <% } %>
+      </div>
 
-      <!-- LOGIN FORM -->
-      <form action="/login" method="post">
-        <div class="form-group">
-          <label>Email</label>
-          <input type="text" class="form-control" name="email">
-        </div>
-        <div class="form-group">
-          <label>Password</label>
-          <input type="password" class="form-control" name="password">
-        </div>
-
-        <button type="submit" class="btn-large">Login</button>
-      </form>
-
-      <hr>
-
-      <p>Don't have an account? Just kidding, go <a href="/signup">Sign Up</a>!</p>
-      <p>Or go <a href="/">home</a>.</p>
-
-    </div>
-  </div>
-
-  <%- include('footer') -%>
-
-</body>
+    <%- include('footer') -%>
 
 </html>
