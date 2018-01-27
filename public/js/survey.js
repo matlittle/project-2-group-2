@@ -93,7 +93,7 @@ function trueAnswer(e) {
 
   setTimeout( function () {
     showNextQuestion(surveyQuestions, idx + 1);
-  }, 1000);
+  }, 500);
   
 }
 
@@ -106,7 +106,7 @@ function falseAnswer(e) {
 
   setTimeout( function () {
     showNextQuestion(surveyQuestions, idx + 1);
-  }, 1000);
+  }, 500);
 }
 
 async function getMoreQuestions() {
