@@ -156,6 +156,6 @@ function endSurvey() {
       specId = 4;
     }
   
-    window.location.replace(`https://kintsukuroi.herokuapp.com/resources${specId}`);
+    window.location.replace(`https://kintsukuroi.herokuapp.com/resources/${specId}`);
   });
 }
