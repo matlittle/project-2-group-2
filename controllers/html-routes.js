@@ -1,8 +1,9 @@
 
 module.exports = function (app) {
   // HOME PAGE (with login links) ========
-  app.get('/', function (req, res) {
-    res.render('index.ejs'); // load the index.ejs file
+  app.get('/', isLoggedIn, function (req, res) {
+    console.log(req.user);
+    res.render('index.ejs', {user: req.user[0].email} ); // load the index.ejs file
   });
 
   //About
@@ -29,7 +30,7 @@ module.exports = function (app) {
 
   // RESOURCES ===============================
   // show the login form
-  app.get('/resources/:id', function (req, res) {
+  app.get('/resources/:id', isLoggedIn, function (req, res) {
     //req.params.id
     let sId = req.params.id;
     console.log(req.params);
@@ -57,9 +58,7 @@ module.exports = function (app) {
     console.log('./controllers/login-routes.js - GET /profile ===============');
     console.log('req.user: ', req.user);
 
-    res.render('profile.ejs', {
-      user: req.user[0] // get the user out of session and pass to template
-    });
+    res.render('profile.ejs', {user: req.user});
   });
 
 }
@@ -74,5 +73,5 @@ function isLoggedIn(req, res, next) {
   }
 
   // if they aren't redirect them to the home page
-  res.redirect('/');
+  res.redirect('/login');
 }
