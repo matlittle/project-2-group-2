@@ -129,17 +129,17 @@ function getMoreQuestions() {
 
 }
 
-async function endSurvey() {
+function endSurvey() {
   $('#question-container').empty();
   $('#question-container').append("Done");
 
   $.ajax({
     method: 'GET',
     url: `${domain}/api/survey/getResults`
-  }).done( function(res) {
-    
+  }).then( function(res) {
+
     console.log("res: ", res);
-  })
+  });
 
   
 }
