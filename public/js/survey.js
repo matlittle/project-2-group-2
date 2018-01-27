@@ -1,6 +1,6 @@
 
 // Domain for api calls
-const domain = 'https://kintsukuroi.herokuapp.com';
+const domain = 'http://kintsukuroi.herokuapp.com';
 
 const scores = {
   f1: 0,
