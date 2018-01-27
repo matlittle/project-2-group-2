@@ -139,6 +139,8 @@ p {
 
 .about {
   max-width:65%;
-  position: relative;
+}
 
+.photo {
+  padding-left: 17%;
 }
