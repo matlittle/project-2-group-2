@@ -111,20 +111,20 @@ function falseAnswer(e) {
   }, 500);
 }
 
-async function getMoreQuestions() {
+function getMoreQuestions() {
   console.log('scores: ', scores);
 
-  const updateThreshold = await $.ajax({
+  $.ajax({
     method: 'PUT',
     url: `${domain}/api/survey/updateThreshold`
+  }).done(function() {
+    $.ajax({
+      method: 'PUT',
+      url: `${domain}/api/survey/updateScores`,
+      data: scores,
+      success: getQuestions
+    });
   })
-  
-  const updateScores = await $.ajax({
-    method: 'PUT',
-    url: `${domain}/api/survey/updateScores`,
-    data: scores,
-    success: getQuestions
-  });
 
 }
 
