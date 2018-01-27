@@ -43,6 +43,7 @@ function showQuestions(questions) {
   console.log(questions);
 
   if (questions.length < 1) {
+    console.log('Question length less than 1');
     return endSurvey();
   }
 
@@ -130,6 +131,9 @@ function getMoreQuestions() {
 }
 
 function endSurvey() {
+
+  console.log("end survey fired");
+
   $('#question-container').empty();
   $('#question-container').append("Done");
 
@@ -137,9 +141,7 @@ function endSurvey() {
     method: 'GET',
     url: `${domain}/api/survey/getResults`
   }).then( function(res) {
-
+    console.log("Then after survey results");
     console.log("res: ", res);
   });
-
-  
 }
