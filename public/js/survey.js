@@ -41,11 +41,12 @@ function getQuestions(res) {
 
 function showQuestions(questions) {
   console.log(questions);
-  surveyQuestions = questions;
 
   if (questions.length < 1) {
     return endSurvey();
   }
+
+  surveyQuestions = questions;
 
   showNextQuestion(surveyQuestions);
 }
@@ -132,10 +133,13 @@ async function endSurvey() {
   $('#question-container').empty();
   $('#question-container').append("Done");
 
-  const chosenField = await $.ajax({
+  $.ajax({
     method: 'GET',
     url: `${domain}/api/survey/getResults`
-  });
+  }).done( function(res) {
+    
+    console.log("res: ", res);
+  })
 
-  console.log(chosenField);
+  
 }
