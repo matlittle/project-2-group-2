@@ -1,6 +1,6 @@
 
 // Domain for api calls
-const domain = 'http://localhost:8080';
+const domain = 'https://kintsukuroi.herokuapp.com';
 
 const scores = {
   f1: 0,
@@ -126,19 +126,14 @@ async function getMoreQuestions() {
 
 }
 
-function endSurvey() {
+async function endSurvey() {
   $('#question-container').empty();
   $('#question-container').append("Done");
+
+  const chosenField = await $.ajax({
+    method: 'GET',
+    url: `${domain}/api/survey/getResults`
+  });
+
+  console.log(chosenField);
 }
-
-
-
-/* 
-  <div id="question-container" class="col s12 m8 push-m2 l8 push-l2">
-    <h1>Here's your questionnaire!</h1>
-    <br>
-    <h4 id="question">This is a question!</h4>
-    <a class="waves-effect waves-light btn-large"><i class="material-icons left">thumb_down</i>False</a>
-    <a class="waves-effect waves-light btn-large"><i class="material-icons left">thumb_up</i>True</a>
-  </div> 
-*/
