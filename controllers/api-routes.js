@@ -3,7 +3,7 @@ const survey = require('./survey');
 
 module.exports = function(app) {
   //Initialize scores and threshold to 0
-  app.put('/api/survey/initSurvey', async function(req, res) {
+  app.put('/api/survey/initSurvey', isLoggedIn, async function(req, res) {
     console.log("./controllers/api-routes.js - api/survey/initSurvey ========");
 
     console.log("req.user.id: ", req.user.id);
@@ -16,7 +16,7 @@ module.exports = function(app) {
   });
 
   //Get the next round of questions
-  app.get('/api/survey/getQuestions', async function(req, res) {
+  app.get('/api/survey/getQuestions', isLoggedIn, async function(req, res) {
     console.log("./controllers/api-routes.js - api/survey/getQuestions ======");
 
     console.log("req.user.id: ", req.user.id);
@@ -29,7 +29,7 @@ module.exports = function(app) {
   });
 
   //Update the current threshold
-  app.put('/api/survey/updateThreshold', async function(req, res) {
+  app.put('/api/survey/updateThreshold', isLoggedIn, async function(req, res) {
     console.log("./controllers/api-routes.js - api/survey/updateThreshold ===");
 
     console.log("req.user.id: ", req.user.id);
@@ -42,7 +42,7 @@ module.exports = function(app) {
   });
 
   //Update the user's scores
-  app.put('/api/survey/updateScores', async function(req, res) {
+  app.put('/api/survey/updateScores', isLoggedIn, async function(req, res) {
     console.log("./controllers/api-routes.js - api/survey/updateScores ======");
    
     console.log(req.body);
@@ -56,7 +56,7 @@ module.exports = function(app) {
   });
 
   //Get the user's results 
-  app.get('/api/survey/getResults', async function(req, res) {
+  app.get('/api/survey/getResults', isLoggedIn, async function(req, res) {
     console.log("./controllers/api-routes.js - api/survey/getResults ========");
 
     const result = await survey.getUserResults(req.user.id);
@@ -66,4 +66,16 @@ module.exports = function(app) {
     res.status(200).json(result);
   });
 
+}
+
+// route middleware to make sure a user is logged in
+function isLoggedIn(req, res, next) {
+
+  // if user is authenticated in the session, carry on
+  if (req.isAuthenticated()) {
+    return next();
+  }
+
+  // if they aren't redirect them to the home page
+  res.redirect('/');
 }
