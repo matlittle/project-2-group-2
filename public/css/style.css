@@ -56,15 +56,17 @@ p {
 
 .card {
   background-color: #d3c1c3;
-}
-
-.card .card-title {
   text-align: center;
   font-weight: bold;
 }
 
+.card .card-title {
+  font-weight: bold;
+}
+
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
-  color: #81717a;
+  color: #fffcf2;
+  font-size: 24px;
 }
 
 .tabs {
@@ -78,8 +80,9 @@ p {
   width: 100%;
 }
 
-.footer-copyright {
-  background-color: #81717a;
+.page-footer .footer-copyright {
+  background-color: #d3c1c3;
+  color: #51404f;
 }
 
 #footer-btn {
