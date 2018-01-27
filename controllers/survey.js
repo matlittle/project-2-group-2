@@ -61,7 +61,7 @@ module.exports.updateState = async function(id) {
 
 
 module.exports.updateScores = async function(scores, id) {
-  const newScores = await orm.setFields(scores, id).catch(logError);
+  const newScores = await orm.updateFields(scores, id).catch(logError);
 
   return newScores;
 }

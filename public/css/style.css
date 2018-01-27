@@ -1,27 +1,27 @@
 body {
-	background-color: #fffcf2;
-	color: #51404f;
-	display: flex;
-	min-height: 100vh;
+  background-color: #fffcf2;
+  color: #51404f;
+  display: flex;
+  min-height: 100vh;
   flex-direction: column;
   max-width: 100%;
 }
 
 main {
-	flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 nav {
-	background-color: #d3c1c3;
-
+  background-color: #d3c1c3;
 }
 
-ul {
-	padding-right: 2%;
+ul a {
+  color: #fffcf2;
+  font-size: 1.3em;
 }
 
 a {
-	color: #dcc48e;
+  color: #dcc48e;
 }
 
 a:hover {
@@ -33,51 +33,84 @@ p {
 }
 
 .logo-image {
-    max-height: 64px!important;
-    padding: 7px 0!important;
+  max-height: 64px !important;
+  padding: 7px 0 !important;
 }
 
 #logo {
-	max-width: 100%;
-	background-color: #d3c1c3;
+  max-width: 100%;
+  background-color: #d3c1c3;
   display: block;
   margin: 0 auto;
   border-radius: 12px;
 }
 
 .btn-large {
-	background-color: #51404f;
-	border-radius: 12px;
-	color: #dcc48e;
-	font-weight: bold;
-	font-size: 1em;
-
+  background-color: #51404f;
+  border-radius: 12px;
+  color: #dcc48e;
+  font-weight: bold;
+  font-size: 1em;
 }
 
-.btn-large:hover, .btn-large:active, .btn-large:focus {
-	background-color: #81717a;
+.btn-large:hover,
+.btn-large:active,
+.btn-large:focus {
+  background-color: #81717a;
+}
+
+.card {
+  background-color: #d3c1c3;
+  text-align: center;
+  font-weight: bold;
+}
+
+.card .card-title {
+  font-weight: bold;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+  color: #fffcf2;
+  font-size: 24px;
+}
+
+.tabs {
+  background-color: #51404f;
+  color: #d3c1c3;
 }
 
 .page-footer {
-	background-color: #fffcf2;
+  background-color: #fffcf2;
   color: #51404f;
   width: 100%;
 }
 
-.footer-copyright {
-	background-color: #81717a;
+.page-footer .footer-copyright {
+  background-color: #d3c1c3;
+  color: #51404f;
 }
 
 #footer-btn {
   background-color: #51404f;
   color: #fffcf2;
+  font-size: 20px;
+}
+
+#footer-body {
+  background-color: #dcc48e;
+}
+
+#disclaimer {
+  font-weight: normal;
+  font-size: 1em;
 }
 
 .icon-block {
   padding: 0 15px;
 }
+
 .icon-block .material-icons {
-	font-size: inherit;
+  font-size: inherit;
 }
 
 #fill {
@@ -86,10 +119,12 @@ p {
 }
 
 /* Always set the map height explicitly to define the size of the div element that contains the map. */
+
 #map-container {
   padding: 10px;
   max-width: 100%;
 }
+
 #map {
   height: 500px;
   width: 100%;
