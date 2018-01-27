@@ -46,7 +46,7 @@ module.exports = function(app) {
     console.log("./controllers/api-routes.js - api/survey/updateScores ======");
    
     console.log(req.body);
-    const scores = req.body.scores;
+    const scores = req.body;
 
     const result = await survey.updateScores(scores, req.user[0].id);
 
