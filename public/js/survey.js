@@ -146,11 +146,11 @@ function endSurvey() {
 
     var specId;
     
-    if (res === "Anxiety") {
+    if (res === "anxiety") {
       specId = 1;
-    } else if (res === "Depression"){
+    } else if (res === "depression"){
       specId = 2;
-    } else if (res === "ADHD") {
+    } else if (res === "adhd") {
       specId = 3;
     } else {
       specId = 4;
