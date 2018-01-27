@@ -40,7 +40,7 @@ p {
 
 .logo-image {
   max-height: 64px !important;
-  padding: 7px 0 !important;
+  padding: 7px 15px !important;
 }
 
 #logo {
@@ -94,6 +94,7 @@ p {
 .page-footer .footer-copyright {
   background-color: #d3c1c3;
   color: #51404f;
+  padding-left: 15px;
 }
 
 #footer-btn {
@@ -144,6 +145,7 @@ p {
 
 .photo {
   padding-left: 17%;
+  padding-top: 7%;
 }
 
 .spec-div {
