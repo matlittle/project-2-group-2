@@ -1,6 +1,8 @@
 
 // Domain for api calls
 const domain = 'https://kintsukuroi.herokuapp.com';
+//const domain = 'localhost:8080';
+
 
 const scores = {
   f1: 0,
