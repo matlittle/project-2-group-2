@@ -22,8 +22,6 @@ $(document).on('click', '#false-btn', falseAnswer);
 function initSurvey() {
   $('#question-container').empty();
 
-  scores.f1 = scores.f2 = scores.f3 = scores.f4 = 0;
-
   $.ajax({
     method: 'PUT', 
     url: `${domain}/api/survey/initSurvey`,
@@ -32,6 +30,8 @@ function initSurvey() {
 }
 
 function getQuestions(res) {
+  scores.f1 = scores.f2 = scores.f3 = scores.f4 = 0;
+
   $.ajax({
     method: 'GET',
     url: `${domain}/api/survey/getQuestions`,
