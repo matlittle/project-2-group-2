@@ -10,7 +10,7 @@ module.exports = function(app) {
 
     console.log("result: ", result);
 
-    res.json(result);
+    res.status(200).json(result);
   });
 
   //Get the next round of questions
@@ -21,7 +21,7 @@ module.exports = function(app) {
 
     console.log("result: ", result);
 
-    res.json(result);
+    res.status(200).json(result);
   });
 
   //Update the current threshold
@@ -32,7 +32,7 @@ module.exports = function(app) {
 
     console.log("result: ", result);
 
-    res.json(result);
+    res.status(200).json(result);
   });
 
   //Update the user's scores
@@ -46,7 +46,7 @@ module.exports = function(app) {
 
     console.log("result: ", result);
 
-    res.json(result);
+    res.status(200).json(result);
   });
 
   //Get the user's results 
@@ -57,7 +57,7 @@ module.exports = function(app) {
     
     console.log("result: ", result);
     
-    res.json(result);
+    res.status(200).json(result);
   });
 
 }
