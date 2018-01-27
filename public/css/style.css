@@ -28,6 +28,10 @@ a:hover {
   color: #51404f;
 }
 
+p {
+  font-weight: bold;
+}
+
 .logo-image {
     max-height: 64px!important;
     padding: 7px 0!important;

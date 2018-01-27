@@ -73,10 +73,12 @@ var map, infoWindow, contentString;
                 let contentString = `<div id="content">
                 <div id="siteNotice">
                 </div>
-                <h4 id="firstHeading" class="firstHeading">${results[i].profile.first_name} ${results[i].profile.last_name}, ${results[i].profile.title}</h4>
-                <h5>${results[i].specialties[0].name}, ${results[i].specialties[0].description}</h5>
+                <h5 id="firstHeading" class="firstHeading">${results[i].profile.first_name} ${results[i].profile.last_name}, ${results[i].profile.title}</h5>
+                <p>${results[i].specialties[0].name}, ${results[i].specialties[0].description}</p>
+                <br><br>
                 <div id="bodyContent">
-                <p>${results[i].profile.bio}</p> 
+                <p>${results[i].profile.bio}</p>
+                <br>
                 <p>You can call them at: ${results[i].practices[0].phones[0].number}</p> 
                 </div> 
                 </div>`;
