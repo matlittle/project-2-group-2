@@ -15,6 +15,11 @@ nav {
   background-color: #d3c1c3;
 }
 
+ul a {
+  color: #fffcf2;
+  font-size: 1.3em;
+}
+
 a {
   color: #dcc48e;
 }
@@ -90,6 +95,11 @@ p {
   color: #fffcf2;
   font-size: 20px;
 }
+
+#footer-body {
+  background-color: #dcc48e;
+}
+
 
 .icon-block {
   padding: 0 15px;
