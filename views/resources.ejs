@@ -1,86 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('header') -%>
-  
-      <div class="section">
-        <div class="container">
+<%- include('header') -%>
+
+  <div class="section">
+    <div class="container">
+      <div class="row center-align">
+        <div class="col s12 m10 push-m1 l10 push-l1">
+          <h2>Resources</h2>
+          <h5>Based on your responses, we think these might help you.</h5>
+
+          <!-- Beginning of specific field descriptions -->
+
+
           <div class="row">
-            <div class="col s12 m10 push-m1 l10 push-l1">
-              <h2>Resources</h2>
-              <h5>Based on your responses, we think these might help you.</h5>
-              
-                <div class="row">
 
-                    <div class="col s12 m12 l7">
-                        <div id = "map-container" class = "container">
-  
-                            <div id="map"></div>
-            
-                            </div>
+            <div class="col s12 m12 l12">
+              <div id="map-container" class="container">
+
+                <div id="map"></div>
+
+              </div>
+            </div>
+          </div>
+          <!--END MAP-->
+
+          <!-- START OF RESOURCE CARDS AND BLURBS -->
+          <div class="row center-align">
+            <div class="col s12 m12 l12">
+              <div class="card medium">
+                <div class="card-content">
+                  <span class="card-title">Therapy</span>
+                  <p>There may be a lot of stigma behind getting help. I think we've all heard the phrase, "Just pull yourself
+                    up by your bootstraps, and move on!" Well, we know that to be absolute crap. Please, seek help. There
+                    are many, free or low cost ways to seek help for your mental health.</p>
+                </div>
+                <div class="card-tabs">
+                  <ul class="tabs tabs-fixed-width">
+                    <li class="tab">
+                      <a href="#test1">Open Path Collective</a>
+                    </li>
+                    <li class="tab">
+                      <a class="active" href="#test2">Open Counseling</a>
+                    </li>
+                    <li class="tab">
+                      <a href="#test3">Instawell</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-content">
+                  <div id="test1">
+                    <p>Founded in 2012, and launched in the spring of 2013, Open Path Psychotherapy Collective is a nationwide
+                      network of mental health professionals dedicated to providing in-office mental health care—at a steeply
+                      reduced rate—to individuals, couples, children, and families in need. Since their founding, Open Path
+                      has matched more than 9,000 clients across the country to affordable psychotherapeutic care. Additionally,
+                      Open Path has had over 20,000 students sign on to take one of their affordable online wellness classes.</p>
+                    <div class="card-action">
+                      <a href="https://openpathcollective.org/">
+                        <i class="tiny material-icons">open_in_new</i>Open Path Collective</a>
                     </div>
+                  </div>
 
-      <!--END MAP-->
-
-      <!-- START OF RESOURCE CARDS AND BLURBS -->
-      <div class="row">
-        <div class="col s12 m4 l4">
-          <div class="card">
-            <div class="card-content center-align">
-              <span class="card-title">Therapy</span>
-              <p>Meditation is a really helpful activity that can help with many problems.</p>
-            </div>
-          </div>
-        </div>
-
-
-
-
-        <div class="col s12 m4 l4 ">
-          <div class="card">
-            <div class="card-content center-align">
-              <span class="card-title">Guided Meditation</span>
-              <p>Meditation is a really helpful activity that can help with many problems.</p>
-            </div>
-            <div class="card-tabs">
-              <ul class="tabs tabs-fixed-width">
-                <li class="tab">
-                  <a href="#test4">UCLA Mindful Meditations</a>
-                </li>
-                <li class="tab">
-                  <a class="active" href="#test5">Headspace</a>
-                </li>
-                <li class="tab">
-                  <a href="#test6">Test 3</a>
-                </li>
-              </ul>
-            </div>
-            <div class="card-content grey lighten-4">
-              <div id="test4">A free, guided introduction to mindfulness meditation that you can practice on your own provided by UCLA Health.
-                <div class="card-action">
-                  <a href="http://marc.ucla.edu/mindful-meditations">UCLA Mindful Meditations</a>
+                  <div id="test2">
+                    <p>Another option for finding affordable counseling.</p>
+                    <div class="card-action">
+                      <a href="https://www.opencounseling.com/">
+                        <i class="tiny material-icons">open_in_new</i>Open Counseling</a>
+                    </div>
+                  </div>
+                  <div id="test3">
+                    <p>Instawell is the place where you can chat privately and anonymously about whatever's on your mind. Vent
+                      your frustrations, talk through a big decision, or simply chat when you're feeling alone. You can connect
+                      with thousands of Helpers from a variety of backgrounds and experiences.</p>
+                    <br>
+                    <br>
+                    <p>They also have mobile apps for Android and Apple</p>
+                    <div class="card-action">
+                      <a href="https://instawell.com/welcome">
+                        <i class="tiny material-icons">open_in_new</i>InstaWell</a>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <div id="test5">A website that provides guided meditation and mindfulness exercises. They have mobile apps for both Android
-                and Apple, so you can learn to meditate wherever, whenever. -"A personal meditation guide, right in your
-                pocket"
-                <div class="card-action">
-                  <a href="https://www.headspace.com/">Headspace</a>
-                </div>
-              </div>
-              <div id="test6">Test 3</div>
             </div>
           </div>
+
+
+
+          <div class="row center-align">
+            <div class="col s12 m12 l12">
+              <div class="card medium">
+                <div class="card-content">
+                  <span class="card-title">Guided Meditation</span>
+                  <p>Meditation is a really helpful activity that can help with many problems, but especially those of the mind!</p>
+                </div>
+                <div class="card-tabs">
+                  <ul class="tabs tabs-fixed-width">
+                    <li class="tab">
+                      <a href="#test4">UCLA Mindful Meditations</a>
+                    </li>
+                    <li class="tab">
+                      <a class="active" href="#test5">Headspace</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-content">
+                  <div id="test4">
+                    <p>A free, guided introduction to mindfulness meditation that you can practice on your own provided by UCLA
+                      Health.
+                    </p>
+                    <div class="card-action">
+                      <a href="http://marc.ucla.edu/mindful-meditations">
+                        <i class="tiny material-icons">open_in_new</i>UCLA Mindful Meditations</a>
+                    </div>
+                  </div>
+
+                  <div id="test5">
+                    <p>A website that provides guided meditation and mindfulness exercises. They have mobile apps for both Android
+                      and Apple, so you can learn to meditate wherever, whenever.</p>
+                    <br>
+                    <br>
+                    <p>"A personal meditation guide, right in your pocket"
+                    </p>
+                    <div class="card-action">
+                      <a href="https://www.headspace.com/">
+                        <i class="tiny material-icons">open_in_new</i>Headspace</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row center-align">
+            <div class="col s12 m12 l12">
+              <div class="card small">
+                <div class="card-content">
+                  <h4>Don't think you can afford help?</h4>
+                  <br>
+                  <h5>It doesn't matter.</h5>
+                  <p>Please read this blog post about why!</p>
+                  <div class="card-action">
+                    <a href="http://careforyourmind.org/what-to-do-when-you-cant-afford-therapy/#more-1447">
+                      <i class="tiny material-icons">open_in_new</i>YOU CAN AFFORD IT</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- End Resources -->
         </div>
       </div>
 
 
-      <!-- End Resources -->
-    </div>
-  </div>
-
-
-  <%- include('footer') -%>
+      <%- include('footer') -%>
 
 </html>
