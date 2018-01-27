@@ -19,6 +19,7 @@ nav {
 ul a {
   color: #fffcf2;
   font-size: 1.3em;
+  font-weight: bold;
 }
 
 a {
@@ -139,6 +140,12 @@ p {
 
 .about {
   max-width:65%;
-  position: relative;
+}
 
+.photo {
+  padding-left: 17%;
+}
+
+.spec-div {
+  display: none;
 }
